@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 280" fill="none" class="project-vector-art">
+  <defs>
+    <linearGradient id="gp-dash-bg" x1="0" y1="0" x2="480" y2="280" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#202321"/>
+      <stop offset="100%" stop-color="#161817"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="480" height="280" fill="url(#gp-dash-bg)" rx="8"/>
+
+  <text x="40" y="32" fill="#9CAF88" font-family="'JetBrains Mono', monospace" font-size="9" letter-spacing="1.5">ANALYTICS // GLOBAL PLACEMENT COHORT</text>
+  <text x="350" y="32" fill="#D8C9B5" font-family="'JetBrains Mono', monospace" font-size="9">PLOTLY + DASH SUITE</text>
+
+  <!-- Left: Salary Percentile Distribution Bars (25th, Median, 75th, 95th) -->
+  <g transform="translate(40, 60)">
+    <text x="0" y="10" fill="#F3EFE6" font-family="'JetBrains Mono', monospace" font-size="8">COMPENSATION QUANTILES ($k/yr)</text>
+
+    <!-- Engineering -->
+    <text x="0" y="32" fill="#D8C9B5" font-family="'Inter', sans-serif" font-size="7.5">AI / ML Eng</text>
+    <rect x="75" y="24" width="120" height="12" rx="2" fill="#315BE8"/>
+    <text x="202" y="33" fill="#F3EFE6" font-family="'JetBrains Mono', monospace" font-size="7.5">$142k</text>
+
+    <!-- Data Science -->
+    <text x="0" y="56" fill="#D8C9B5" font-family="'Inter', sans-serif" font-size="7.5">Data Science</text>
+    <rect x="75" y="48" width="102" height="12" rx="2" fill="#9CAF88"/>
+    <text x="184" y="57" fill="#F3EFE6" font-family="'JetBrains Mono', monospace" font-size="7.5">$118k</text>
+
+    <!-- Software Eng -->
+    <text x="0" y="80" fill="#D8C9B5" font-family="'Inter', sans-serif" font-size="7.5">Software Eng</text>
+    <rect x="75" y="72" width="112" height="12" rx="2" fill="#315BE8" fill-opacity="0.7"/>
+    <text x="194" y="81" fill="#F3EFE6" font-family="'JetBrains Mono', monospace" font-size="7.5">$130k</text>
+
+    <!-- Cloud / DevOps -->
+    <text x="0" y="104" fill="#D8C9B5" font-family="'Inter', sans-serif" font-size="7.5">Cloud Infra</text>
+    <rect x="75" y="96" width="94" height="12" rx="2" fill="#D8C9B5"/>
+    <text x="176" y="105" fill="#F3EFE6" font-family="'JetBrains Mono', monospace" font-size="7.5">$109k</text>
+
+    <!-- Product / Quant -->
+    <text x="0" y="128" fill="#D8C9B5" font-family="'Inter', sans-serif" font-size="7.5">Quant / FinTech</text>
+    <rect x="75" y="120" width="138" height="12" rx="2" fill="#CC6A42"/>
+    <text x="220" y="129" fill="#F3EFE6" font-family="'JetBrains Mono', monospace" font-size="7.5">$164k</text>
+  </g>
+
+  <!-- Right: International Flow Heatmap Matrix -->
+  <g transform="translate(285, 60)">
+    <text x="0" y="10" fill="#F3EFE6" font-family="'JetBrains Mono', monospace" font-size="8">OFFER CONCENTRATION MATRIX</text>
+
+    <!-- Grid cells 4x4 -->
+    <g transform="translate(0, 24)">
+      <!-- Row 1 -->
+      <rect x="0" y="0" width="34" height="26" rx="2" fill="#315BE8" fill-opacity="0.9"/>
+      <text x="17" y="16" fill="#F3EFE6" font-family="'JetBrains Mono', monospace" font-size="7.5" text-anchor="middle">38%</text>
+      <rect x="38" y="0" width="34" height="26" rx="2" fill="#315BE8" fill-opacity="0.5"/>
+      <text x="55" y="16" fill="#F3EFE6" font-family="'JetBrains Mono', monospace" font-size="7.5" text-anchor="middle">19%</text>
+      <rect x="76" y="0" width="34" height="26" rx="2" fill="#9CAF88" fill-opacity="0.4"/>
+      <text x="93" y="16" fill="#F3EFE6" font-family="'JetBrains Mono', monospace" font-size="7.5" text-anchor="middle">12%</text>
+      <rect x="114" y="0" width="34" height="26" rx="2" fill="#9CAF88" fill-opacity="0.2"/>
+      <text x="131" y="16" fill="#F3EFE6" font-family="'JetBrains Mono', monospace" font-size="7.5" text-anchor="middle">6%</text>
+
+      <!-- Row 2 -->
+      <rect x="0" y="30" width="34" height="26" rx="2" fill="#315BE8" fill-opacity="0.6"/>
+      <text x="17" y="46" fill="#F3EFE6" font-family="'JetBrains Mono', monospace" font-size="7.5" text-anchor="middle">24%</text>
+      <rect x="38" y="30" width="34" height="26" rx="2" fill="#315BE8" fill-opacity="0.8"/>
+      <text x="55" y="46" fill="#F3EFE6" font-family="'JetBrains Mono', monospace" font-size="7.5" text-anchor="middle">31%</text>
+      <rect x="76" y="30" width="34" height="26" rx="2" fill="#CC6A42" fill-opacity="0.5"/>
+      <text x="93" y="46" fill="#F3EFE6" font-family="'JetBrains Mono', monospace" font-size="7.5" text-anchor="middle">18%</text>
+      <rect x="114" y="30" width="34" height="26" rx="2" fill="#9CAF88" fill-opacity="0.3"/>
+      <text x="131" y="46" fill="#F3EFE6" font-family="'JetBrains Mono', monospace" font-size="7.5" text-anchor="middle">8%</text>
+
+      <!-- Row 3 -->
+      <rect x="0" y="60" width="34" height="26" rx="2" fill="#9CAF88" fill-opacity="0.3"/>
+      <text x="17" y="76" fill="#F3EFE6" font-family="'JetBrains Mono', monospace" font-size="7.5" text-anchor="middle">9%</text>
+      <rect x="38" y="60" width="34" height="26" rx="2" fill="#CC6A42" fill-opacity="0.7"/>
+      <text x="55" y="76" fill="#F3EFE6" font-family="'JetBrains Mono', monospace" font-size="7.5" text-anchor="middle">27%</text>
+      <rect x="76" y="60" width="34" height="26" rx="2" fill="#315BE8" fill-opacity="0.75"/>
+      <text x="93" y="76" fill="#F3EFE6" font-family="'JetBrains Mono', monospace" font-size="7.5" text-anchor="middle">29%</text>
+      <rect x="114" y="60" width="34" height="26" rx="2" fill="#315BE8" fill-opacity="0.4"/>
+      <text x="131" y="76" fill="#F3EFE6" font-family="'JetBrains Mono', monospace" font-size="7.5" text-anchor="middle">14%</text>
+
+      <!-- Row 4 -->
+      <rect x="0" y="90" width="34" height="26" rx="2" fill="#9CAF88" fill-opacity="0.2"/>
+      <text x="17" y="106" fill="#F3EFE6" font-family="'JetBrains Mono', monospace" font-size="7.5" text-anchor="middle">5%</text>
+      <rect x="38" y="90" width="34" height="26" rx="2" fill="#9CAF88" fill-opacity="0.4"/>
+      <text x="55" y="106" fill="#F3EFE6" font-family="'JetBrains Mono', monospace" font-size="7.5" text-anchor="middle">11%</text>
+      <rect x="76" y="90" width="34" height="26" rx="2" fill="#CC6A42" fill-opacity="0.4"/>
+      <text x="93" y="106" fill="#F3EFE6" font-family="'JetBrains Mono', monospace" font-size="7.5" text-anchor="middle">16%</text>
+      <rect x="114" y="90" width="34" height="26" rx="2" fill="#315BE8" fill-opacity="0.6"/>
+      <text x="131" y="106" fill="#F3EFE6" font-family="'JetBrains Mono', monospace" font-size="7.5" text-anchor="middle">21%</text>
+    </g>
+  </g>
+
+  <!-- Interactive Filter Footer -->
+  <g transform="translate(40, 235)">
+    <text x="0" y="8" fill="#F3EFE6" font-family="'JetBrains Mono', monospace" font-size="7.5" opacity="0.6">PANDAS DRILL-DOWN:</text>
+    <text x="135" y="8" fill="#315BE8" font-family="'JetBrains Mono', monospace" font-size="7.5">df.groupby(['region','role']).agg(p50=('salary','median'))</text>
+  </g>
+</svg>

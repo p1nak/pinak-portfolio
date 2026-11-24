@@ -1,0 +1,100 @@
+/**
+ * DESIGN TOKENS — PINAK CHAUHAN PORTFOLIO
+ * Swiss International Typographic Style & Editorial Palette
+ */
+
+:root {
+  /* Color Palette */
+  --color-ivory: #F3EFE6;
+  --color-ivory-light: #FAF8F4;
+  --color-ivory-card: #ECE6DA;
+  --color-charcoal: #202321;
+  --color-charcoal-light: #2D312E;
+  --color-charcoal-deep: #161817;
+  --color-charcoal-border: rgba(32, 35, 33, 0.15);
+  
+  --color-cobalt: #315BE8;
+  --color-cobalt-hover: #2144BA;
+  --color-cobalt-subtle: rgba(49, 91, 232, 0.08);
+  --color-cobalt-glow: rgba(49, 91, 232, 0.25);
+  
+  --color-sage: #9CAF88;
+  --color-sage-dark: #6C7F59;
+  --color-sage-subtle: rgba(156, 175, 136, 0.15);
+  
+  --color-amber: #CC6A42;
+  --color-amber-hover: #B35832;
+  --color-amber-subtle: rgba(204, 106, 66, 0.12);
+  
+  --color-mocha: #D8C9B5;
+  --color-mocha-subtle: rgba(216, 201, 181, 0.35);
+
+  /* Semantic Mappings */
+  --bg-primary: var(--color-ivory);
+  --bg-secondary: var(--color-ivory-light);
+  --bg-surface: var(--color-ivory-card);
+  --bg-dark: var(--color-charcoal);
+  --bg-dark-card: #252926;
+  
+  --text-primary: var(--color-charcoal);
+  --text-secondary: rgba(32, 35, 33, 0.72);
+  --text-muted: rgba(32, 35, 33, 0.52);
+  --text-inverse: var(--color-ivory);
+  --text-inverse-secondary: rgba(243, 239, 230, 0.75);
+  --text-inverse-muted: rgba(243, 239, 230, 0.50);
+
+  /* Typography Stacks */
+  --font-display: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-serif: 'DM Serif Display', Georgia, serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Spacing Scale (Swiss Modular 8pt) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+  --space-32: 128px;
+
+  /* Grid & Dimensions */
+  --max-width: 1360px;
+  --gutter: 24px;
+  --header-height: 72px;
+
+  /* Architectural Radii & Borders */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --border-fine: 1px solid var(--color-charcoal-border);
+  --border-dark: 1px solid rgba(243, 239, 230, 0.12);
+  --border-accent: 1px solid var(--color-cobalt);
+
+  /* Shadows (Subtle, non-muddy) */
+  --shadow-sm: 0 1px 3px rgba(32, 35, 33, 0.05);
+  --shadow-md: 0 4px 12px rgba(32, 35, 33, 0.07);
+  --shadow-lg: 0 12px 32px rgba(32, 35, 33, 0.09);
+  --shadow-elevated: 0 20px 48px rgba(32, 35, 33, 0.14);
+
+  /* Transitions */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --duration-fast: 150ms;
+  --duration-normal: 280ms;
+  --duration-slow: 450ms;
+
+  /* Layering */
+  --z-base: 1;
+  --z-nav: 50;
+  --z-modal: 100;
+  --z-tooltip: 110;
+  --z-preloader: 200;
+}

@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 280" fill="none" class="project-vector-art">
+  <defs>
+    <linearGradient id="gb-bg" x1="0" y1="0" x2="480" y2="280" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#202321"/>
+      <stop offset="100%" stop-color="#161817"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="480" height="280" fill="url(#gb-bg)" rx="8"/>
+
+  <text x="40" y="32" fill="#9CAF88" font-family="'JetBrains Mono', monospace" font-size="9" letter-spacing="1.5">TELEMETRY // 4-CH ACCELEROMETER FFT</text>
+  <text x="320" y="32" fill="#D8C9B5" font-family="'JetBrains Mono', monospace" font-size="9">52 STATISTICAL FEATURES</text>
+
+  <!-- 4 Vibration Channels Oscillograms -->
+  <!-- CH 1: Healthy Baseline -->
+  <text x="40" y="65" fill="#9CAF88" font-family="'JetBrains Mono', monospace" font-size="7.5">CH-01 (HEALTHY TOOTH)</text>
+  <path d="M 170 62 Q 185 52, 200 62 T 230 62 T 260 62 T 290 62 T 320 62 T 350 62 T 380 62 T 410 62 T 440 62" fill="none" stroke="#9CAF88" stroke-width="1.5" stroke-linecap="round"/>
+
+  <!-- CH 2: Intermediate Load -->
+  <text x="40" y="105" fill="#D8C9B5" font-family="'JetBrains Mono', monospace" font-size="7.5">CH-02 (RADIAL AXIS)</text>
+  <path d="M 170 102 Q 185 90, 200 102 T 230 102 T 260 102 T 290 102 T 320 102 T 350 102 T 380 102 T 410 102 T 440 102" fill="none" stroke="#D8C9B5" stroke-width="1.3" stroke-linecap="round" opacity="0.8"/>
+
+  <!-- CH 3: Anomaly / Broken Tooth Impulse Spike -->
+  <text x="40" y="145" fill="#CC6A42" font-family="'JetBrains Mono', monospace" font-size="7.5">CH-03 (BROKEN TOOTH SPK)</text>
+  <path d="M 170 142 L 230 142 L 245 110 L 260 170 L 275 125 L 290 155 L 305 142 L 440 142" fill="none" stroke="#CC6A42" stroke-width="2" stroke-linecap="round"/>
+  <!-- Highlight on anomaly -->
+  <circle cx="260" cy="170" r="5" fill="#CC6A42" fill-opacity="0.3" stroke="#CC6A42" stroke-width="1.5"/>
+
+  <!-- CH 4: Frequency Harmonic Spectrum -->
+  <text x="40" y="185" fill="#315BE8" font-family="'JetBrains Mono', monospace" font-size="7.5">CH-04 (AXIAL FFT HARMONICS)</text>
+  <!-- Spectrum bars -->
+  <g transform="translate(170, 195)">
+    <line x1="0" y1="0" x2="0" y2="-12" stroke="#315BE8" stroke-width="2"/>
+    <line x1="20" y1="0" x2="20" y2="-24" stroke="#315BE8" stroke-width="2"/>
+    <line x1="40" y1="0" x2="40" y2="-8" stroke="#315BE8" stroke-width="2"/>
+    <line x1="60" y1="0" x2="60" y2="-34" stroke="#315BE8" stroke-width="2.5"/>
+    <line x1="80" y1="0" x2="80" y2="-16" stroke="#315BE8" stroke-width="2"/>
+    <line x1="100" y1="0" x2="100" y2="-45" stroke="#CC6A42" stroke-width="3"/>
+    <line x1="120" y1="0" x2="120" y2="-22" stroke="#315BE8" stroke-width="2"/>
+    <line x1="140" y1="0" x2="140" y2="-15" stroke="#315BE8" stroke-width="2"/>
+    <line x1="160" y1="0" x2="160" y2="-28" stroke="#315BE8" stroke-width="2"/>
+    <line x1="180" y1="0" x2="180" y2="-10" stroke="#315BE8" stroke-width="2"/>
+    <line x1="200" y1="0" x2="200" y2="-7" stroke="#315BE8" stroke-width="2"/>
+    <line x1="220" y1="0" x2="220" y2="-18" stroke="#315BE8" stroke-width="2"/>
+    <line x1="240" y1="0" x2="240" y2="-4" stroke="#315BE8" stroke-width="2"/>
+    <line x1="260" y1="0" x2="260" y2="-14" stroke="#315BE8" stroke-width="2"/>
+  </g>
+
+  <!-- Benchmark Models Footer Tags -->
+  <g transform="translate(40, 235)">
+    <text x="0" y="8" fill="#F3EFE6" font-family="'JetBrains Mono', monospace" font-size="7.5" opacity="0.6">MODELS EVALUATED:</text>
+    <rect x="110" y="-3" width="55" height="16" rx="2" fill="#202321" stroke="#315BE8" stroke-width="0.8"/>
+    <text x="137" y="8" fill="#F3EFE6" font-family="'JetBrains Mono', monospace" font-size="7" text-anchor="middle">SVM</text>
+
+    <rect x="175" y="-3" width="85" height="16" rx="2" fill="#202321" stroke="#9CAF88" stroke-width="0.8"/>
+    <text x="217" y="8" fill="#F3EFE6" font-family="'JetBrains Mono', monospace" font-size="7" text-anchor="middle">RANDOM FOREST</text>
+
+    <rect x="270" y="-3" width="50" height="16" rx="2" fill="#202321" stroke="#D8C9B5" stroke-width="0.8"/>
+    <text x="295" y="8" fill="#F3EFE6" font-family="'JetBrains Mono', monospace" font-size="7" text-anchor="middle">KNN</text>
+
+    <rect x="330" y="-3" width="75" height="16" rx="2" fill="#202321" stroke="#CC6A42" stroke-width="0.8"/>
+    <text x="367" y="8" fill="#F3EFE6" font-family="'JetBrains Mono', monospace" font-size="7" text-anchor="middle">LOGISTIC REG</text>
+  </g>
+</svg>

@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 400" fill="none" class="about-hero-art">
+  <defs>
+    <linearGradient id="ab-grad-bg" x1="0" y1="0" x2="520" y2="400" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#202321"/>
+      <stop offset="100%" stop-color="#181B19"/>
+    </linearGradient>
+    <linearGradient id="beam-grad" x1="60" y1="200" x2="460" y2="200" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#9CAF88" stop-opacity="0.4"/>
+      <stop offset="35%" stop-color="#315BE8" stop-opacity="0.8"/>
+      <stop offset="70%" stop-color="#CC6A42" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#315BE8" stop-opacity="0.9"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="520" height="400" fill="url(#ab-grad-bg)" rx="12"/>
+
+  <!-- Swiss Architectural Grid Lines -->
+  <g opacity="0.12" stroke="#F3EFE6" stroke-width="0.8">
+    <line x1="60" y1="40" x2="460" y2="40"/>
+    <line x1="60" y1="120" x2="460" y2="120"/>
+    <line x1="60" y1="200" x2="460" y2="200"/>
+    <line x1="60" y1="280" x2="460" y2="280"/>
+    <line x1="60" y1="360" x2="460" y2="360"/>
+    <line x1="160" y1="30" x2="160" y2="370"/>
+    <line x1="260" y1="30" x2="260" y2="370"/>
+    <line x1="360" y1="30" x2="360" y2="370"/>
+  </g>
+
+  <!-- Editorial Top Label -->
+  <text x="60" y="32" fill="#9CAF88" font-family="'JetBrains Mono', monospace" font-size="9" letter-spacing="2">SYSTEMIC EVOLUTION // DATA → INTELLIGENCE → DEPLOYMENT</text>
+  <text x="460" y="32" fill="#D8C9B5" font-family="'JetBrains Mono', monospace" font-size="9" text-anchor="end">FIG. 01 — COGNITIVE CONTINUUM</text>
+
+  <!-- TRANSFORMATION PIPELINE STAGES -->
+
+  <!-- STAGE 1: RAW SIGNALS & DATA -->
+  <g transform="translate(70, 70)">
+    <text x="0" y="0" fill="#9CAF88" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="600">01 // RAW SIGNALS</text>
+    <text x="0" y="14" fill="#D8C9B5" font-family="'Inter', sans-serif" font-size="7.5" opacity="0.7">Unstructured bytes & telemetry</text>
+
+    <!-- Raw Data Matrix Dots -->
+    <g transform="translate(0, 26)">
+      <rect width="80" height="70" rx="4" fill="#202321" stroke="#9CAF88" stroke-width="1"/>
+      <circle cx="15" cy="18" r="2.5" fill="#9CAF88"/>
+      <circle cx="35" cy="18" r="2" fill="#D8C9B5"/>
+      <circle cx="55" cy="18" r="3" fill="#9CAF88"/>
+      <circle cx="68" cy="18" r="2" fill="#F3EFE6"/>
+
+      <circle cx="20" cy="35" r="3" fill="#F3EFE6"/>
+      <circle cx="40" cy="35" r="2.5" fill="#9CAF88"/>
+      <circle cx="60" cy="35" r="2" fill="#D8C9B5"/>
+
+      <circle cx="15" cy="52" r="2" fill="#D8C9B5"/>
+      <circle cx="32" cy="52" r="3" fill="#9CAF88"/>
+      <circle cx="50" cy="52" r="2.5" fill="#F3EFE6"/>
+      <circle cx="65" cy="52" r="2" fill="#9CAF88"/>
+    </g>
+  </g>
+
+  <!-- Connective flow vector 1 -> 2 -->
+  <path d="M 165 140 L 195 140" stroke="#315BE8" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="180" cy="140" r="3" fill="#315BE8"/>
+
+  <!-- STAGE 2: MATHEMATICAL TENSORS -->
+  <g transform="translate(205, 70)">
+    <text x="0" y="0" fill="#315BE8" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="600">02 // TENSOR SPACE</text>
+    <text x="0" y="14" fill="#D8C9B5" font-family="'Inter', sans-serif" font-size="7.5" opacity="0.7">Vector projections & math</text>
+
+    <!-- 3D Isometric Tensor Block -->
+    <g transform="translate(0, 26)">
+      <rect width="80" height="70" rx="4" fill="#202321" stroke="#315BE8" stroke-width="1"/>
+      <!-- Matrix grid lines -->
+      <line x1="12" y1="24" x2="68" y2="24" stroke="#315BE8" stroke-width="0.8" opacity="0.6"/>
+      <line x1="12" y1="46" x2="68" y2="46" stroke="#315BE8" stroke-width="0.8" opacity="0.6"/>
+      <line x1="30" y1="12" x2="30" y2="58" stroke="#315BE8" stroke-width="0.8" opacity="0.6"/>
+      <line x1="50" y1="12" x2="50" y2="58" stroke="#315BE8" stroke-width="0.8" opacity="0.6"/>
+      <text x="21" y="38" fill="#F3EFE6" font-family="'JetBrains Mono', monospace" font-size="7">X₁</text>
+      <text x="40" y="38" fill="#F3EFE6" font-family="'JetBrains Mono', monospace" font-size="7">W</text>
+      <text x="59" y="38" fill="#315BE8" font-family="'JetBrains Mono', monospace" font-size="7">b</text>
+    </g>
+  </g>
+
+  <!-- Connective flow vector 2 -> 3 -->
+  <path d="M 300 140 L 330 140" stroke="#CC6A42" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="315" cy="140" r="3" fill="#CC6A42"/>
+
+  <!-- STAGE 3: NEURAL LEARNING -->
+  <g transform="translate(340, 70)">
+    <text x="0" y="0" fill="#CC6A42" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="600">03 // DEEP LEARNING</text>
+    <text x="0" y="14" fill="#D8C9B5" font-family="'Inter', sans-serif" font-size="7.5" opacity="0.7">BiGRU, LSTM & Ensembles</text>
+
+    <!-- Neural synapse cluster -->
+    <g transform="translate(0, 26)">
+      <rect width="90" height="70" rx="4" fill="#202321" stroke="#CC6A42" stroke-width="1"/>
+      <circle cx="20" cy="22" r="5" fill="#202321" stroke="#315BE8" stroke-width="1.5"/>
+      <circle cx="20" cy="48" r="5" fill="#202321" stroke="#315BE8" stroke-width="1.5"/>
+
+      <circle cx="50" cy="18" r="6" fill="#202321" stroke="#CC6A42" stroke-width="2"/>
+      <circle cx="50" cy="35" r="6" fill="#202321" stroke="#9CAF88" stroke-width="2"/>
+      <circle cx="50" cy="52" r="6" fill="#202321" stroke="#CC6A42" stroke-width="2"/>
+
+      <circle cx="75" cy="35" r="5" fill="#202321" stroke="#315BE8" stroke-width="1.5"/>
+
+      <!-- Synapse lines -->
+      <line x1="25" y1="22" x2="44" y2="18" stroke="#F3EFE6" stroke-width="0.8" opacity="0.4"/>
+      <line x1="25" y1="22" x2="44" y2="35" stroke="#F3EFE6" stroke-width="0.8" opacity="0.4"/>
+      <line x1="25" y1="48" x2="44" y2="35" stroke="#F3EFE6" stroke-width="0.8" opacity="0.4"/>
+      <line x1="25" y1="48" x2="44" y2="52" stroke="#F3EFE6" stroke-width="0.8" opacity="0.4"/>
+      <line x1="56" y1="35" x2="70" y2="35" stroke="#CC6A42" stroke-width="1.2"/>
+    </g>
+  </g>
+
+  <!-- LOWER LEVEL: APPLIED ENGINEERING & PRODUCTION DEPLOYMENT -->
+  <g transform="translate(70, 225)">
+    <!-- Central Beam -->
+    <path d="M 0 0 C 120 40, 240 -20, 370 20" fill="none" stroke="url(#beam-grad)" stroke-width="3" stroke-linecap="round"/>
+
+    <!-- Left Box: Software Engineering -->
+    <rect x="0" y="30" width="180" height="95" rx="6" fill="#202321" stroke="#315BE8" stroke-width="1.2"/>
+    <text x="16" y="52" fill="#315BE8" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="600">APPLIED SOFTWARE</text>
+    <text x="16" y="70" fill="#F3EFE6" font-family="'Inter', sans-serif" font-size="7.5">FastAPI Microservices</text>
+    <text x="16" y="86" fill="#D8C9B5" font-family="'Inter', sans-serif" font-size="7.5">Interactive Plotly/Dash Analytics</text>
+    <text x="16" y="102" fill="#9CAF88" font-family="'Inter', sans-serif" font-size="7.5">Industrial Telemetry Pipelines</text>
+
+    <!-- Right Box: Real-World Utility -->
+    <rect x="200" y="30" width="180" height="95" rx="6" fill="#202321" stroke="#9CAF88" stroke-width="1.2"/>
+    <text x="216" y="52" fill="#9CAF88" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="600">PRODUCTION VALUE</text>
+    <text x="216" y="70" fill="#F3EFE6" font-family="'Inter', sans-serif" font-size="7.5">91.20% Text Emotion Parsing</text>
+    <text x="216" y="86" fill="#F3EFE6" font-family="'Inter', sans-serif" font-size="7.5">0.939 ROC-AUC Credit Risk Engine</text>
+    <text x="216" y="102" fill="#D8C9B5" font-family="'Inter', sans-serif" font-size="7.5">Real-time Gearbox Fault Alerts</text>
+  </g>
+
+  <!-- Swiss Quote Signature -->
+  <text x="60" y="375" fill="#D8C9B5" font-family="'DM Serif Display', Georgia, serif" font-size="11" font-style="italic">"I turn data into intelligence and ideas into useful software."</text>
+  <text x="460" y="375" fill="#315BE8" font-family="'JetBrains Mono', monospace" font-size="8" text-anchor="end">— PINAK CHAUHAN</text>
+</svg>

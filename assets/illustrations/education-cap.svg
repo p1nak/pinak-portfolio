@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 260" fill="none" class="education-vector-art">
+  <defs>
+    <linearGradient id="edu-bg" x1="0" y1="0" x2="360" y2="260" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#202321"/>
+      <stop offset="100%" stop-color="#161817"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="360" height="260" fill="url(#edu-bg)" rx="8"/>
+
+  <!-- Academic / Engineering Grid Lines -->
+  <g opacity="0.12" stroke="#F3EFE6" stroke-width="0.6">
+    <line x1="30" y1="30" x2="330" y2="30"/>
+    <line x1="30" y1="130" x2="330" y2="130"/>
+    <line x1="30" y1="230" x2="330" y2="230"/>
+    <line x1="180" y1="20" x2="180" y2="240"/>
+  </g>
+
+  <!-- Editorial Top Label -->
+  <text x="30" y="24" fill="#9CAF88" font-family="'JetBrains Mono', monospace" font-size="8" letter-spacing="1.5">ACADEMIA // GUJARAT TECHNOLOGICAL UNIV.</text>
+  <text x="330" y="24" fill="#CC6A42" font-family="'JetBrains Mono', monospace" font-size="8" text-anchor="end">CLASS OF 2027</text>
+
+  <!-- Geometric Graduation Cap & Engineering Diamond Emblem -->
+  <g transform="translate(180, 105)">
+    <!-- Concentric Target Circles -->
+    <circle r="60" stroke="#315BE8" stroke-width="1" stroke-opacity="0.25" stroke-dasharray="3 3"/>
+    <circle r="42" stroke="#9CAF88" stroke-width="1" stroke-opacity="0.3"/>
+
+    <!-- Graduation Rhombus Cap Top -->
+    <polygon points="0,-28 55,0 0,28 -55,0" fill="#202321" stroke="#315BE8" stroke-width="2.5"/>
+    <polygon points="0,-22 45,0 0,22 -45,0" fill="#315BE8" fill-opacity="0.15"/>
+
+    <!-- Tassel Cord & Ornament -->
+    <path d="M 0 0 C 18 10, 35 22, 45 42" fill="none" stroke="#CC6A42" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="45" cy="42" r="3.5" fill="#CC6A42"/>
+
+    <!-- Center Pivot Pin -->
+    <circle cx="0" cy="0" r="4.5" fill="#F3EFE6" stroke="#202321" stroke-width="1.5"/>
+
+    <!-- Lower Skull Cap Geometry -->
+    <path d="M -30 14 C -30 35, 30 35, 30 14" fill="none" stroke="#D8C9B5" stroke-width="2" stroke-linecap="round"/>
+  </g>
+
+  <!-- Verified CGPA Badge Box -->
+  <g transform="translate(180, 195)">
+    <rect x="-70" y="-14" width="140" height="28" rx="4" fill="#202321" stroke="#9CAF88" stroke-width="1.2"/>
+    <text x="0" y="4" fill="#F3EFE6" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" letter-spacing="1" text-anchor="middle">CGPA: 7.22 / 10.0</text>
+  </g>
+
+  <!-- Precision Corner Calipers -->
+  <path d="M 30 38 L 30 30 L 38 30" stroke="#F3EFE6" stroke-width="1.2" opacity="0.4"/>
+  <path d="M 330 38 L 330 30 L 322 30" stroke="#F3EFE6" stroke-width="1.2" opacity="0.4"/>
+  <path d="M 30 222 L 30 230 L 38 230" stroke="#F3EFE6" stroke-width="1.2" opacity="0.4"/>
+  <path d="M 330 222 L 330 230 L 322 230" stroke="#F3EFE6" stroke-width="1.2" opacity="0.4"/>
+</svg>

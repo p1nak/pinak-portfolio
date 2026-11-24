@@ -1,0 +1,84 @@
+/**
+ * ANIMATIONS & MOTION DESIGN — PINAK CHAUHAN PORTFOLIO
+ * Purposeful, restrained motion inspired by Swiss typography and Skiper UI
+ */
+
+/* Reveal Animations */
+.reveal-fade {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 700ms cubic-bezier(0.16, 1, 0.3, 1), transform 700ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-fade.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger item delays */
+.reveal-stagger-1 { transition-delay: 50ms; }
+.reveal-stagger-2 { transition-delay: 120ms; }
+.reveal-stagger-3 { transition-delay: 190ms; }
+.reveal-stagger-4 { transition-delay: 260ms; }
+
+/* Text Clipping Mask Reveal */
+.text-mask-reveal {
+  overflow: hidden;
+  display: block;
+}
+
+.text-mask-reveal span {
+  display: inline-block;
+  transform: translateY(110%);
+  transition: transform 800ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.is-revealed .text-mask-reveal span {
+  transform: translateY(0);
+}
+
+/* Journey SVG Path Scroll Animation */
+.journey-line-track {
+  stroke: var(--color-charcoal-border);
+  stroke-width: 2;
+  stroke-dasharray: 4 4;
+}
+
+.journey-line-progress {
+  stroke: var(--color-cobalt);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 80ms linear;
+}
+
+/* Three.js Canvas Fade In */
+.three-canvas-container {
+  opacity: 0;
+  transform: scale(0.97);
+  transition: opacity 800ms var(--ease-out), transform 800ms var(--ease-out);
+}
+
+.three-canvas-container.loaded {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Card hover spring transition */
+.interactive-card {
+  transition: transform 250ms cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 250ms var(--ease-out), border-color 200ms ease;
+}
+
+.interactive-card:hover {
+  transform: translateY(-4px) scale(1.005);
+}
+
+/* Pulsing Badge Accent */
+@keyframes subtlePulse {
+  0% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.08); opacity: 1; }
+  100% { transform: scale(1); opacity: 0.8; }
+}
+
+.pulse-badge {
+  animation: subtlePulse 3s infinite ease-in-out;
+}

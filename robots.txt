@@ -1,0 +1,5 @@
+# robots.txt for Pinak Chauhan Portfolio
+User-agent: *
+Allow: /
+
+Sitemap: https://pinak-chauhan.onrender.com/sitemap.xml
