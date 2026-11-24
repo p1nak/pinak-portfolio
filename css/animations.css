@@ -51,14 +51,14 @@
   transition: stroke-dashoffset 80ms linear;
 }
 
-/* Three.js Canvas Fade In */
-.three-canvas-container {
+/* Portrait Showcase Fade In */
+.hero-portrait-frame {
   opacity: 0;
   transform: scale(0.97);
   transition: opacity 800ms var(--ease-out), transform 800ms var(--ease-out);
 }
 
-.three-canvas-container.loaded {
+.hero-portrait-frame.is-revealed {
   opacity: 1;
   transform: scale(1);
 }

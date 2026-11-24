@@ -229,84 +229,137 @@
   align-items: center;
 }
 
-/* Hero 3D Centerpiece Canvas Container */
+/* Hero Portrait Visual Showcase */
 .hero-visual-col {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 420px;
+  min-height: 440px;
 }
 
-.three-canvas-container {
+.hero-portrait-frame {
   width: 100%;
-  max-width: 480px;
-  height: 460px;
+  max-width: 440px;
   position: relative;
   border-radius: var(--radius-md);
   background-color: var(--color-ivory-card);
   border: var(--border-fine);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-lg);
   overflow: hidden;
-}
-
-#hero-three-canvas {
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-
-/* Fallback 2D canvas/SVG for non-WebGL devices */
-.webgl-fallback {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: none;
-  background-color: var(--color-ivory-card);
-  padding: var(--space-6);
-}
-
-.three-canvas-container.fallback-active .webgl-fallback {
+  padding: var(--space-4);
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  transition: transform var(--duration-normal) var(--ease-out), box-shadow var(--duration-normal) var(--ease-out), border-color var(--duration-fast);
 }
 
-.three-canvas-container.fallback-active #hero-three-canvas {
-  display: none;
+.hero-portrait-frame:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-elevated);
+  border-color: var(--color-cobalt);
 }
 
-/* Visual Overlay Badges */
-.canvas-hud {
-  position: absolute;
-  top: var(--space-3);
-  left: var(--space-3);
-  right: var(--space-3);
+.portrait-hud-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  pointer-events: none;
+  padding-bottom: var(--space-3);
+  border-bottom: var(--border-fine);
   font-family: var(--font-mono);
-  font-size: 0.68rem;
+  font-size: 0.72rem;
   letter-spacing: 0.1em;
   color: var(--text-muted);
 }
 
-.canvas-hud-bottom {
-  position: absolute;
-  bottom: var(--space-3);
-  left: var(--space-3);
-  right: var(--space-3);
+.hud-tag {
+  color: var(--color-cobalt);
+  font-weight: 600;
+}
+
+.portrait-image-wrapper {
+  position: relative;
+  width: 100%;
+  border-radius: var(--radius-xs);
+  overflow: hidden;
+  margin-top: var(--space-3);
+  margin-bottom: var(--space-3);
+  background-color: var(--color-ivory);
+  border: var(--border-fine);
+}
+
+.hero-portrait-img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 935 / 1024;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--duration-slow) var(--ease-out);
+}
+
+.hero-portrait-frame:hover .hero-portrait-img {
+  transform: scale(1.02);
+}
+
+.portrait-hud-bottom {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  pointer-events: none;
+  padding-top: var(--space-3);
+  border-top: var(--border-fine);
   font-family: var(--font-mono);
-  font-size: 0.68rem;
-  color: var(--color-cobalt);
+  font-size: 0.72rem;
+}
+
+.portrait-badge {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-weight: 600;
+  color: var(--color-charcoal);
+  letter-spacing: 0.05em;
+}
+
+.portrait-discipline {
+  color: var(--color-sage-dark);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+/* Swiss Precision Corner Calipers */
+.caliper {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  pointer-events: none;
+  opacity: 0.45;
+}
+
+.caliper-tl {
+  top: 8px;
+  left: 8px;
+  border-top: 2px solid var(--color-charcoal);
+  border-left: 2px solid var(--color-charcoal);
+}
+
+.caliper-tr {
+  top: 8px;
+  right: 8px;
+  border-top: 2px solid var(--color-charcoal);
+  border-right: 2px solid var(--color-charcoal);
+}
+
+.caliper-bl {
+  bottom: 8px;
+  left: 8px;
+  border-bottom: 2px solid var(--color-charcoal);
+  border-left: 2px solid var(--color-charcoal);
+}
+
+.caliper-br {
+  bottom: 8px;
+  right: 8px;
+  border-bottom: 2px solid var(--color-charcoal);
+  border-right: 2px solid var(--color-charcoal);
 }
 
 /* ==========================================================================
