@@ -1,6 +1,6 @@
 /**
  * SCROLL-DRIVEN SVG JOURNEY TIMELINE — PINAK CHAUHAN PORTFOLIO
- * Calculates scroll progression along the SVG line and highlights milestones
+ * Optimized rAF SVG line progression with offscreen short-circuiting & throttled resize.
  */
 
 (function () {
@@ -8,57 +8,94 @@
 
   const journeyContainer = document.getElementById('journey-container');
   const journeyPath = document.getElementById('journey-svg-path');
-  const milestones = document.querySelectorAll('.milestone-item');
+  const beacon = document.getElementById('journey-beacon');
+  const milestones = Array.from(document.querySelectorAll('.milestone-item'));
 
   if (!journeyContainer || !journeyPath) return;
 
   let pathLength = 0;
+  let isTicking = false;
+  let lastOffset = null;
+  let lastBeaconActive = null;
+  let lastBeaconLeft = null;
+  let resizeTimer = null;
 
   function init() {
     setupSvgPath();
-    window.addEventListener('scroll', onScroll, { passive: true });
-    window.addEventListener('resize', onResize);
-    onScroll();
+    window.addEventListener('scroll', requestTick, { passive: true });
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        setupSvgPath();
+        updateProgress();
+      }, 150);
+    }, { passive: true });
+    updateProgress();
   }
 
   function setupSvgPath() {
-    pathLength = journeyPath.getTotalLength ? journeyPath.getTotalLength() : 1000;
+    pathLength = journeyPath.getTotalLength ? journeyPath.getTotalLength() : 1200;
     journeyPath.style.strokeDasharray = `${pathLength} ${pathLength}`;
-    journeyPath.style.strokeDashoffset = `${pathLength}`;
+    lastOffset = null;
   }
 
-  function onResize() {
-    setupSvgPath();
-    onScroll();
+  function requestTick() {
+    if (!isTicking) {
+      requestAnimationFrame(() => {
+        updateProgress();
+        isTicking = false;
+      });
+      isTicking = true;
+    }
   }
 
-  function onScroll() {
-    if (!journeyContainer) return;
-
+  function updateProgress() {
     const rect = journeyContainer.getBoundingClientRect();
     const windowHeight = window.innerHeight;
-    
-    // Calculate progress through journey section
-    // Start drawing when top of container reaches 65% of viewport
-    const startOffset = windowHeight * 0.65;
-    const totalDistance = rect.height;
-    const currentProgress = (startOffset - rect.top) / totalDistance;
 
-    const clampedProgress = Math.min(Math.max(currentProgress, 0), 1);
-
-    // Update stroke dashoffset
-    const drawLength = pathLength * clampedProgress;
-    journeyPath.style.strokeDashoffset = `${pathLength - drawLength}`;
-
-    // Highlight individual milestones
-    milestones.forEach((item) => {
-      const itemRect = item.getBoundingClientRect();
-      if (itemRect.top < windowHeight * 0.6) {
-        item.classList.add('active');
-      } else {
-        item.classList.remove('active');
+    // Short-circuit layout reads for milestone items when container is completely offscreen
+    if (rect.bottom < -40 || rect.top > windowHeight + 40) {
+      if (beacon && lastBeaconActive) {
+        beacon.classList.remove('active');
+        lastBeaconActive = false;
       }
-    });
+      return;
+    }
+
+    const startOffset = windowHeight * 0.65;
+    const totalDistance = rect.height || 1;
+    const clampedProgress = Math.min(Math.max((startOffset - rect.top) / totalDistance, 0), 1);
+
+    const newOffset = Number((pathLength - pathLength * clampedProgress).toFixed(2));
+    if (newOffset !== lastOffset) {
+      lastOffset = newOffset;
+      journeyPath.style.strokeDashoffset = String(newOffset);
+    }
+
+    if (beacon) {
+      const showBeacon = clampedProgress > 0.02 && clampedProgress < 0.98;
+      if (showBeacon !== lastBeaconActive) {
+        beacon.classList.toggle('active', showBeacon);
+        lastBeaconActive = showBeacon;
+      }
+      if (showBeacon) {
+        beacon.style.top = `${(clampedProgress * 100).toFixed(2)}%`;
+        const targetLeft = window.innerWidth >= 768 ? '50%' : '24px';
+        if (targetLeft !== lastBeaconLeft) {
+          beacon.style.left = targetLeft;
+          lastBeaconLeft = targetLeft;
+        }
+      }
+    }
+
+    const thresholdY = windowHeight * 0.62;
+    for (let i = 0; i < milestones.length; i++) {
+      const item = milestones[i];
+      const shouldBeActive = item.getBoundingClientRect().top < thresholdY;
+      if (shouldBeActive !== item.classList.contains('active')) {
+        item.classList.toggle('active', shouldBeActive);
+      }
+    }
   }
 
   if (document.readyState === 'loading') {

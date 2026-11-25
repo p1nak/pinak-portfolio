@@ -8,8 +8,8 @@
 
   <rect width="480" height="280" fill="url(#mlw-bg)" rx="8"/>
 
-  <text x="40" y="32" fill="#9CAF88" font-family="'JetBrains Mono', monospace" font-size="9" letter-spacing="1.5">PIPELINE // EDA • PCA • GRIDSEARCH CV</text>
-  <text x="340" y="32" fill="#D8C9B5" font-family="'JetBrains Mono', monospace" font-size="9">ALGORITHMIC WORKFLOWS</text>
+  <text x="24" y="32" fill="#9CAF88" font-family="'JetBrains Mono', monospace" font-size="7.5" letter-spacing="0.8">PIPELINE // PCA • GRIDSEARCH • 5-FOLD CV</text>
+  <text x="456" y="32" fill="#D8C9B5" font-family="'JetBrains Mono', monospace" font-size="7.5" text-anchor="end">SCIKIT-LEARN WORKFLOWS</text>
 
   <!-- Left: PCA Eigenvector Projection -->
   <g transform="translate(40, 60)">

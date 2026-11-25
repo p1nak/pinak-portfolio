@@ -14,13 +14,18 @@
   <meta property="og:title" content="Pinak Chauhan — Machine Learning & Software Engineering">
   <meta property="og:description" content="Curious about intelligence. Passionate about building it. Portfolio of machine learning, deep learning, and intelligent software projects.">
   <meta property="og:url" content="https://pinak-chauhan.onrender.com">
-  <meta property="og:image" content="assets/pinak-chauhan.jpg">
+  <meta property="og:image" content="https://pinak-chauhan.onrender.com/assets/images/og-pinak-chauhan.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Pinak Chauhan — Machine Learning & AI Portfolio">
   <meta name="twitter:description" content="Curious about intelligence. Passionate about building it. Exploring machine learning, deep learning, and real-world software.">
-  <meta name="twitter:image" content="assets/pinak-chauhan.jpg">
+  <meta name="twitter:image" content="https://pinak-chauhan.onrender.com/assets/images/og-pinak-chauhan.png">
+
+  <!-- Preload Hero Portrait -->
+  <link rel="preload" as="image" href="assets/pinak-chauhan.webp" type="image/webp">
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
@@ -28,7 +33,7 @@
   <!-- Google Fonts: Space Grotesk, DM Serif Display, Inter, JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 
   <!-- Core Stylesheets -->
   <link rel="stylesheet" href="css/tokens.css">
@@ -153,15 +158,9 @@
 
       <div class="container hero-grid">
         <div class="hero-content">
-          <div class="hero-meta-kicker">
-            <span>01 // SYSTEM OVERVIEW</span>
-            <span>•</span>
-            <span>VADODARA, GUJARAT, INDIA</span>
-          </div>
-
           <h1 class="hero-headline">
-            Curious about <span class="accent-serif">intelligence.</span><br>
-            Passionate about building it.
+            <span class="split-line-wrap"><span class="split-line-inner">Curious about <span class="accent-serif">intelligence.</span></span></span>
+            <span class="split-line-wrap"><span class="split-line-inner">Passionate about building it.</span></span>
           </h1>
 
           <p class="hero-bio">
@@ -185,35 +184,52 @@
           </div>
 
           <div class="hero-actions">
-            <a href="#projects" class="btn btn-primary">
+            <a href="#projects" class="btn btn-primary" data-cursor-label="WORK">
               View My Work
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
             </a>
-            <a href="assets/Pinak_Chauhan_AI_ML_Resume.pdf" download="Pinak_Chauhan_AI_ML_Resume.pdf" class="btn btn-secondary">
+            <a href="assets/Pinak_Chauhan_AI_ML_Resume.pdf" download="Pinak_Chauhan_AI_ML_Resume.pdf" class="btn btn-secondary" data-cursor-label="RESUME">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
               Download Resume
             </a>
-            <a href="https://github.com/p1nak" target="_blank" rel="noopener noreferrer" class="btn-icon" title="GitHub Profile" aria-label="Pinak's GitHub Profile">
+            <a href="https://github.com/p1nak" target="_blank" rel="noopener noreferrer" class="btn-icon" title="GitHub Profile" aria-label="Pinak's GitHub Profile" data-cursor-label="GITHUB">
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
             </a>
-            <a href="https://www.linkedin.com/in/pinak-chauhan-12ab92328" target="_blank" rel="noopener noreferrer" class="btn-icon" title="LinkedIn Profile" aria-label="Pinak's LinkedIn Profile">
+            <a href="https://www.linkedin.com/in/pinak-chauhan-12ab92328" target="_blank" rel="noopener noreferrer" class="btn-icon" title="LinkedIn Profile" aria-label="Pinak's LinkedIn Profile" data-cursor-label="LINKEDIN">
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
             </a>
           </div>
         </div>
 
-        <!-- Hero Portrait Visual Showcase -->
+        <!-- Hero Portrait Visual Showcase + Ambient Three.js Neural Aura -->
         <div class="hero-visual-col">
+          <div id="hero-canvas-container" class="hero-three-ambient" aria-hidden="true">
+            <canvas id="hero-three-canvas"></canvas>
+            <svg class="hero-three-fallback" viewBox="0 0 560 560" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="280" cy="280" r="245" stroke="#315BE8" stroke-width="0.8" stroke-dasharray="4 6" opacity="0.28"/>
+              <circle cx="280" cy="280" r="210" stroke="#9CAF88" stroke-width="0.9" stroke-dasharray="2 4" opacity="0.32"/>
+              <circle cx="280" cy="280" r="270" stroke="#202321" stroke-width="0.6" opacity="0.12"/>
+              <ellipse cx="280" cy="280" rx="255" ry="110" transform="rotate(-24 280 280)" stroke="#315BE8" stroke-width="0.7" opacity="0.22"/>
+              <ellipse cx="280" cy="280" rx="255" ry="110" transform="rotate(28 280 280)" stroke="#6C7F59" stroke-width="0.7" opacity="0.22"/>
+              <circle cx="62" cy="182" r="3.5" fill="#315BE8" opacity="0.5"/>
+              <circle cx="496" cy="368" r="3.5" fill="#CC6A42" opacity="0.45"/>
+              <circle cx="468" cy="128" r="3" fill="#9CAF88" opacity="0.6"/>
+              <circle cx="96" cy="408" r="3" fill="#315BE8" opacity="0.4"/>
+            </svg>
+          </div>
+
           <div class="hero-portrait-frame interactive-card reveal-fade">
             <!-- Architectural HUD Metadata -->
             <div class="portrait-hud-top">
-              <span class="hud-tag">FIG. 00 // PORTRAIT</span>
               <span class="hud-coord">VADODARA • GUJARAT</span>
             </div>
 
-            <!-- Portrait Image -->
+            <!-- Portrait Image (Optimized WebP + Original JPEG Fallback) -->
             <div class="portrait-image-wrapper">
-              <img src="assets/pinak-chauhan.jpg" alt="Illustrated portrait of Pinak Chauhan" class="hero-portrait-img" width="935" height="1024" />
+              <picture>
+                <source srcset="assets/pinak-chauhan.webp" type="image/webp" />
+                <img src="assets/pinak-chauhan.jpg" alt="Illustrated portrait of Pinak Chauhan" class="hero-portrait-img" width="935" height="1024" fetchpriority="high" decoding="async" />
+              </picture>
             </div>
 
             <!-- Architectural Bottom HUD Metadata -->
@@ -241,10 +257,11 @@
     <section id="about" class="section-wrapper" aria-labelledby="about-heading">
       <div class="container">
         <div class="section-header">
-          <div class="section-kicker">02 // MY STORY & INTELLECTUAL ODYSSEY</div>
           <h2 id="about-heading" class="section-title">From Curiosity to Intelligence.</h2>
+          <p class="section-subtitle">Bridging foundational computer science, machine learning models, and real-world production systems.</p>
         </div>
 
+        <!-- 2-Column Split: Narrative Story (Left) & Cognitive Architecture Diagram (Right) -->
         <div class="about-grid">
           <div class="about-story">
             <p class="about-lead">
@@ -266,38 +283,243 @@
             <p>
               Crucially, modeling is only half the craft. The true test of intelligence is real-world deployment. Whether engineering FastAPI microservices, building interactive Plotly/Dash dashboards, or developing industrial quality-control and IoT telemetry systems during internship practice, I focus on turning experimental intelligence into reliable, production-ready software.
             </p>
-
-            <!-- 4 Guiding Principles -->
-            <div class="about-principles">
-              <div class="principle-card">
-                <div class="principle-num">PRIN // 01</div>
-                <div class="principle-title">Empirical Rigor</div>
-                <div class="principle-desc">Evaluating models with stratified cross-validation, calibrated thresholds, and honest baseline comparison.</div>
-              </div>
-
-              <div class="principle-card">
-                <div class="principle-num">PRIN // 02</div>
-                <div class="principle-title">Mathematical Grounding</div>
-                <div class="principle-desc">Understanding the linear algebra, gradient calculus, and probability theory powering the algorithms.</div>
-              </div>
-
-              <div class="principle-card">
-                <div class="principle-num">PRIN // 03</div>
-                <div class="principle-title">Interpretability & Ethics</div>
-                <div class="principle-desc">Using SHAP feature attributions and transparent disclosures rather than opaque black-box assertions.</div>
-              </div>
-
-              <div class="principle-card">
-                <div class="principle-num">PRIN // 04</div>
-                <div class="principle-title">Production Utility</div>
-                <div class="principle-desc">Packaging models into deployable REST microservices and intuitive analytical interfaces.</div>
-              </div>
-            </div>
           </div>
 
           <!-- Editorial Vector Artwork: Cognitive Continuum -->
-          <div class="about-visual-card">
-            <img src="assets/illustrations/about-transformation.svg" alt="Diagram showing the transition from raw data to deep learning and applied engineering" loading="lazy" />
+          <div class="about-visual-card" data-tilt-card>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 440" width="100%" preserveAspectRatio="xMidYMid meet" fill="none" class="about-hero-art" role="img" aria-label="Cognitive Continuum: Architecture diagram showing the transition from raw telemetry through tensor math to deep learning and applied production engineering">
+              <defs>
+                <linearGradient id="ab-grad-bg" x1="0" y1="0" x2="600" y2="440" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#202321"/>
+                  <stop offset="100%" stop-color="#141715"/>
+                </linearGradient>
+                <linearGradient id="beam-grad" x1="36" y1="210" x2="564" y2="210" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#9CAF88" stop-opacity="0.3"/>
+                  <stop offset="30%" stop-color="#315BE8" stop-opacity="0.9"/>
+                  <stop offset="70%" stop-color="#CC6A42" stop-opacity="0.9"/>
+                  <stop offset="100%" stop-color="#9CAF88" stop-opacity="0.9"/>
+                </linearGradient>
+              </defs>
+
+              <!-- Background Base -->
+              <rect width="600" height="440" fill="url(#ab-grad-bg)" rx="12"/>
+
+              <!-- Architectural Background Grid -->
+              <g opacity="0.10" stroke="#F3EFE6" stroke-width="0.75">
+                <line x1="36" y1="46" x2="564" y2="46"/>
+                <line x1="36" y1="130" x2="564" y2="130"/>
+                <line x1="36" y1="214" x2="564" y2="214"/>
+                <line x1="36" y1="310" x2="564" y2="310"/>
+                <line x1="36" y1="395" x2="564" y2="395"/>
+                <line x1="150" y1="20" x2="150" y2="420"/>
+                <line x1="300" y1="20" x2="300" y2="420"/>
+                <line x1="450" y1="20" x2="450" y2="420"/>
+              </g>
+
+              <!-- Editorial Top Bar (Zero Overlap Guaranteed) -->
+              <text x="36" y="32" fill="#9CAF88" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="600" letter-spacing="1.5">SYSTEMIC EVOLUTION</text>
+              <text x="564" y="32" fill="#D8C9B5" font-family="'JetBrains Mono', monospace" font-size="8" text-anchor="end" opacity="0.8">DATA → INTELLIGENCE → DEPLOYMENT</text>
+
+              <!-- ================= STAGE 1: RAW TELEMETRY ================= -->
+              <g transform="translate(36, 62)">
+                <text x="0" y="0" fill="#9CAF88" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="600">01 // RAW TELEMETRY</text>
+                <text x="0" y="13" fill="#D8C9B5" font-family="'Inter', sans-serif" font-size="7.5" opacity="0.75">Unstructured bytes &amp; signals</text>
+
+                <!-- Signal Cluster Box -->
+                <g transform="translate(0, 22)">
+                  <rect width="130" height="84" rx="5" fill="#202321" stroke="#9CAF88" stroke-width="1" stroke-opacity="0.8"/>
+                  <line x1="10" y1="42" x2="120" y2="42" stroke="#9CAF88" stroke-width="0.5" stroke-opacity="0.3" stroke-dasharray="2 2"/>
+                  <line x1="65" y1="10" x2="65" y2="74" stroke="#9CAF88" stroke-width="0.5" stroke-opacity="0.3" stroke-dasharray="2 2"/>
+
+                  <!-- Coordinate dots -->
+                  <circle cx="24" cy="24" r="2.5" fill="#9CAF88"/>
+                  <circle cx="48" cy="18" r="2" fill="#D8C9B5"/>
+                  <circle cx="92" cy="22" r="3" fill="#9CAF88"/>
+                  <circle cx="112" cy="30" r="2" fill="#F3EFE6"/>
+
+                  <circle cx="34" cy="48" r="3" fill="#F3EFE6"/>
+                  <circle cx="65" cy="42" r="3.5" fill="#9CAF88"/>
+                  <circle cx="98" cy="52" r="2.5" fill="#D8C9B5"/>
+
+                  <circle cx="20" cy="66" r="2" fill="#D8C9B5"/>
+                  <circle cx="48" cy="62" r="3" fill="#9CAF88"/>
+                  <circle cx="78" cy="68" r="2.5" fill="#F3EFE6"/>
+                  <circle cx="108" cy="64" r="2" fill="#9CAF88"/>
+                </g>
+              </g>
+
+              <!-- Vector Transition 1 -> 2 -->
+              <g transform="translate(174, 126)">
+                <line x1="0" y1="0" x2="34" y2="0" stroke="#315BE8" stroke-width="2" stroke-linecap="round"/>
+                <polygon points="34,-3 40,0 34,3" fill="#315BE8"/>
+                <circle cx="17" cy="0" r="3" fill="#202321" stroke="#315BE8" stroke-width="1.5"/>
+              </g>
+
+              <!-- ================= STAGE 2: TENSOR SPACE ================= -->
+              <g transform="translate(222, 62)">
+                <text x="0" y="0" fill="#315BE8" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="600">02 // TENSOR SPACE</text>
+                <text x="0" y="13" fill="#D8C9B5" font-family="'Inter', sans-serif" font-size="7.5" opacity="0.75">Vector projections &amp; math</text>
+
+                <!-- Matrix Box -->
+                <g transform="translate(0, 22)">
+                  <rect width="138" height="84" rx="5" fill="#202321" stroke="#315BE8" stroke-width="1" stroke-opacity="0.8"/>
+                  <line x1="12" y1="28" x2="126" y2="28" stroke="#315BE8" stroke-width="0.8" opacity="0.4"/>
+                  <line x1="12" y1="56" x2="126" y2="56" stroke="#315BE8" stroke-width="0.8" opacity="0.4"/>
+                  <line x1="48" y1="12" x2="48" y2="72" stroke="#315BE8" stroke-width="0.8" opacity="0.4"/>
+                  <line x1="90" y1="12" x2="90" y2="72" stroke="#315BE8" stroke-width="0.8" opacity="0.4"/>
+
+                  <!-- Matrix Values -->
+                  <text x="30" y="22" fill="#F3EFE6" font-family="'JetBrains Mono', monospace" font-size="7.5" text-anchor="middle">x₁</text>
+                  <text x="69" y="22" fill="#F3EFE6" font-family="'JetBrains Mono', monospace" font-size="7.5" text-anchor="middle">x₂</text>
+                  <text x="108" y="22" fill="#F3EFE6" font-family="'JetBrains Mono', monospace" font-size="7.5" text-anchor="middle">xₙ</text>
+
+                  <text x="30" y="46" fill="#315BE8" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="700" text-anchor="middle">W₁₁</text>
+                  <text x="69" y="46" fill="#9CAF88" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="700" text-anchor="middle">W₁₂</text>
+                  <text x="108" y="46" fill="#315BE8" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="700" text-anchor="middle">W₁ₙ</text>
+
+                  <text x="69" y="70" fill="#CC6A42" font-family="'JetBrains Mono', monospace" font-size="7.5" text-anchor="middle">f(Wx + b)</text>
+                </g>
+              </g>
+
+              <!-- Vector Transition 2 -> 3 -->
+              <g transform="translate(368, 126)">
+                <line x1="0" y1="0" x2="34" y2="0" stroke="#CC6A42" stroke-width="2" stroke-linecap="round"/>
+                <polygon points="34,-3 40,0 34,3" fill="#CC6A42"/>
+                <circle cx="17" cy="0" r="3" fill="#202321" stroke="#CC6A42" stroke-width="1.5"/>
+              </g>
+
+              <!-- ================= STAGE 3: DEEP LEARNING ================= -->
+              <g transform="translate(416, 62)">
+                <text x="0" y="0" fill="#CC6A42" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="600">03 // DEEP LEARNING</text>
+                <text x="0" y="13" fill="#D8C9B5" font-family="'Inter', sans-serif" font-size="7.5" opacity="0.75">BiGRU, LSTM &amp; Ensembles</text>
+
+                <!-- Synapse Network Box -->
+                <g transform="translate(0, 22)">
+                  <rect width="148" height="84" rx="5" fill="#202321" stroke="#CC6A42" stroke-width="1" stroke-opacity="0.8"/>
+                  
+                  <!-- Input layer -->
+                  <circle cx="22" cy="24" r="5" fill="#202321" stroke="#315BE8" stroke-width="1.5"/>
+                  <circle cx="22" cy="60" r="5" fill="#202321" stroke="#315BE8" stroke-width="1.5"/>
+
+                  <!-- Hidden recurrent layer -->
+                  <circle cx="74" cy="18" r="6" fill="#202321" stroke="#CC6A42" stroke-width="1.8"/>
+                  <circle cx="74" cy="42" r="6" fill="#202321" stroke="#9CAF88" stroke-width="1.8"/>
+                  <circle cx="74" cy="66" r="6" fill="#202321" stroke="#CC6A42" stroke-width="1.8"/>
+
+                  <!-- Output layer -->
+                  <circle cx="126" cy="42" r="5.5" fill="#202321" stroke="#315BE8" stroke-width="1.5"/>
+
+                  <!-- Synapse connections -->
+                  <line x1="27" y1="24" x2="68" y2="18" stroke="#F3EFE6" stroke-width="0.8" opacity="0.35"/>
+                  <line x1="27" y1="24" x2="68" y2="42" stroke="#F3EFE6" stroke-width="0.8" opacity="0.35"/>
+                  <line x1="27" y1="60" x2="68" y2="42" stroke="#F3EFE6" stroke-width="0.8" opacity="0.35"/>
+                  <line x1="27" y1="60" x2="68" y2="66" stroke="#F3EFE6" stroke-width="0.8" opacity="0.35"/>
+
+                  <line x1="80" y1="18" x2="120" y2="42" stroke="#CC6A42" stroke-width="1.2" opacity="0.7"/>
+                  <line x1="80" y1="42" x2="120" y2="42" stroke="#9CAF88" stroke-width="1.4" opacity="0.9"/>
+                  <line x1="80" y1="66" x2="120" y2="42" stroke="#CC6A42" stroke-width="1.2" opacity="0.7"/>
+
+                  <!-- Recurrence feedback indicator -->
+                  <path d="M 68 18 C 54 28, 54 56, 68 66" fill="none" stroke="#CC6A42" stroke-width="1" stroke-dasharray="2 2"/>
+                </g>
+              </g>
+
+              <!-- ================= LOWER LEVEL: BRIDGING TO PRODUCTION ================= -->
+              <!-- Dynamic Gradient Flow Beam -->
+              <path d="M 36 195 C 180 220, 380 180, 564 205" fill="none" stroke="url(#beam-grad)" stroke-width="2.5" stroke-linecap="round"/>
+
+              <g transform="translate(36, 222)">
+                <!-- Left Box: Software Engineering -->
+                <g>
+                  <rect x="0" y="0" width="254" height="152" rx="7" fill="#181B19" stroke="#315BE8" stroke-width="1.2"/>
+                  <text x="16" y="24" fill="#315BE8" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="700" letter-spacing="1">APPLIED SOFTWARE ENGINEERING</text>
+                  <line x1="16" y1="32" x2="238" y2="32" stroke="#315BE8" stroke-width="0.6" opacity="0.4"/>
+
+                  <!-- Items -->
+                  <g transform="translate(16, 48)">
+                    <circle cx="4" cy="4" r="2" fill="#315BE8"/>
+                    <text x="14" y="7" fill="#F3EFE6" font-family="'Inter', sans-serif" font-size="8" font-weight="500">FastAPI REST Microservices</text>
+                    <text x="14" y="19" fill="#D8C9B5" font-family="'Inter', sans-serif" font-size="7" opacity="0.7">Async inference &amp; schema validation</text>
+                  </g>
+
+                  <g transform="translate(16, 78)">
+                    <circle cx="4" cy="4" r="2" fill="#9CAF88"/>
+                    <text x="14" y="7" fill="#F3EFE6" font-family="'Inter', sans-serif" font-size="8" font-weight="500">Interactive Plotly/Dash Analytics</text>
+                    <text x="14" y="19" fill="#D8C9B5" font-family="'Inter', sans-serif" font-size="7" opacity="0.7">Real-time feature exploration</text>
+                  </g>
+
+                  <g transform="translate(16, 108)">
+                    <circle cx="4" cy="4" r="2" fill="#CC6A42"/>
+                    <text x="14" y="7" fill="#F3EFE6" font-family="'Inter', sans-serif" font-size="8" font-weight="500">Industrial IoT &amp; Telemetry Pipelines</text>
+                    <text x="14" y="19" fill="#D8C9B5" font-family="'Inter', sans-serif" font-size="7" opacity="0.7">Sensor signal processing &amp; QR tracking</text>
+                  </g>
+                </g>
+
+                <!-- Right Box: Production Value & Metrics -->
+                <g transform="translate(274, 0)">
+                  <rect x="0" y="0" width="254" height="152" rx="7" fill="#181B19" stroke="#9CAF88" stroke-width="1.2"/>
+                  <text x="16" y="24" fill="#9CAF88" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="700" letter-spacing="1">VERIFIED PRODUCTION METRICS</text>
+                  <line x1="16" y1="32" x2="238" y2="32" stroke="#9CAF88" stroke-width="0.6" opacity="0.4"/>
+
+                  <!-- Items -->
+                  <g transform="translate(16, 48)">
+                    <text x="0" y="7" fill="#315BE8" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="700">91.20%</text>
+                    <text x="46" y="7" fill="#F3EFE6" font-family="'Inter', sans-serif" font-size="8" font-weight="500">BiGRU Emotion Classification</text>
+                    <text x="0" y="19" fill="#D8C9B5" font-family="'Inter', sans-serif" font-size="7" opacity="0.7">Six-class text sentiment analysis</text>
+                  </g>
+
+                  <g transform="translate(16, 78)">
+                    <text x="0" y="7" fill="#9CAF88" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="700">0.939</text>
+                    <text x="46" y="7" fill="#F3EFE6" font-family="'Inter', sans-serif" font-size="8" font-weight="500">ROC-AUC Credit Risk Engine</text>
+                    <text x="0" y="19" fill="#D8C9B5" font-family="'Inter', sans-serif" font-size="7" opacity="0.7">Calibrated XGBoost with SHAP explanations</text>
+                  </g>
+
+                  <g transform="translate(16, 108)">
+                    <text x="0" y="7" fill="#CC6A42" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="700">52 Feat</text>
+                    <text x="46" y="7" fill="#F3EFE6" font-family="'Inter', sans-serif" font-size="8" font-weight="500">Gearbox Fault Diagnostic</text>
+                    <text x="0" y="19" fill="#D8C9B5" font-family="'Inter', sans-serif" font-size="7" opacity="0.7">4-channel vibration spectrum ML</text>
+                  </g>
+                </g>
+              </g>
+
+              <!-- Editorial Signature Footer -->
+              <text x="36" y="416" fill="#D8C9B5" font-family="'DM Serif Display', Georgia, serif" font-size="11.5" font-style="italic">"I turn data into intelligence and ideas into useful software."</text>
+              <text x="564" y="416" fill="#315BE8" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="600" text-anchor="end">— PINAK CHAUHAN</text>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Dedicated Full-Width 4-Column Grid: Guiding Engineering Principles -->
+        <div class="about-principles-container">
+          <div class="principles-header">
+            <span class="principles-kicker">CORE METHODOLOGY</span>
+            <h3 class="principles-section-title">Guiding Engineering Principles.</h3>
+          </div>
+
+          <div class="about-principles-grid">
+            <div class="principle-card" data-tilt-card>
+              <div class="principle-index">01</div>
+              <div class="principle-title">Empirical Rigor</div>
+              <div class="principle-desc">Evaluating models with stratified cross-validation, calibrated thresholds, and honest baseline comparison rather than unchecked optimism.</div>
+            </div>
+
+            <div class="principle-card" data-tilt-card>
+              <div class="principle-index">02</div>
+              <div class="principle-title">Mathematical Grounding</div>
+              <div class="principle-desc">Understanding the linear algebra, gradient calculus, and probability distributions that power learning representations.</div>
+            </div>
+
+            <div class="principle-card" data-tilt-card>
+              <div class="principle-index">03</div>
+              <div class="principle-title">Interpretability &amp; Ethics</div>
+              <div class="principle-desc">Using SHAP feature attributions, residual diagnostics, and transparent disclaimers rather than opaque black-box assertions.</div>
+            </div>
+
+            <div class="principle-card" data-tilt-card>
+              <div class="principle-index">04</div>
+              <div class="principle-title">Production Utility</div>
+              <div class="principle-desc">Packaging models into deployable REST microservices, low-latency endpoints, and intuitive analytical interfaces.</div>
+            </div>
           </div>
         </div>
       </div>
@@ -309,7 +531,6 @@
     <section id="journey" class="section-wrapper" aria-labelledby="journey-heading">
       <div class="container">
         <div class="section-header">
-          <div class="section-kicker">03 // EVOLUTIONARY TIMELINE</div>
           <h2 id="journey-heading" class="section-title">The Learning Pathway.</h2>
           <p class="section-subtitle">A progressive continuum of technical mastery, from foundational computer systems to deployed deep learning architectures.</p>
         </div>
@@ -320,6 +541,7 @@
             <line x1="2" y1="0" x2="2" y2="1200" class="journey-line-track" />
             <line id="journey-svg-path" x1="2" y1="0" x2="2" y2="1200" class="journey-line-progress" />
           </svg>
+          <div id="journey-beacon" class="journey-beacon" aria-hidden="true"></div>
 
           <div class="journey-milestones">
             <!-- Milestone 01 -->
@@ -446,18 +668,33 @@
     <section id="projects" class="section-wrapper" aria-labelledby="projects-heading">
       <div class="container">
         <div class="section-header">
-          <div class="section-kicker">04 // SELECTED REPOSITORIES & SYSTEMS</div>
           <h2 id="projects-heading" class="section-title">Ideas, Experiments & Engineered Solutions.</h2>
           <p class="section-subtitle">An interactive showcase of deep learning models, risk estimators, financial dashboards, and industrial applications with verified evaluation benchmarks.</p>
         </div>
 
-        <!-- Category Filter Tabs -->
+        <!-- Tier 1: Expandable Flagship Project Showcase -->
+        <div class="flagship-showcase-section">
+          <div class="flagship-subheader">
+            <span class="flagship-kicker">FLAGSHIP ARCHITECTURES // EXPANDABLE SHOWCASE</span>
+            <span class="flagship-hint">Select a panel to inspect architecture, benchmarks &amp; live endpoints</span>
+          </div>
+          <div id="flagship-accordion" class="flagship-accordion" role="region" aria-label="Featured Flagship Systems">
+            <!-- Populated dynamically by js/projects.js from PROJECTS_DATA -->
+          </div>
+        </div>
+
+        <!-- Tier 2: Complete System Archive & Category Filter Tabs -->
+        <div class="archive-subheader">
+          <h3 class="archive-title">Complete System Archive</h3>
+          <span id="archive-count-label" class="archive-count">11 Verified Builds</span>
+        </div>
+
         <div class="projects-filter-bar" role="tablist" aria-label="Project Categories">
           <button type="button" class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All Systems (11)</button>
-          <button type="button" class="filter-btn" data-filter="deep-learning" role="tab" aria-selected="false">Deep Learning & NLP</button>
+          <button type="button" class="filter-btn" data-filter="deep-learning" role="tab" aria-selected="false">Deep Learning &amp; NLP</button>
           <button type="button" class="filter-btn" data-filter="machine-learning" role="tab" aria-selected="false">Machine Learning</button>
-          <button type="button" class="filter-btn" data-filter="data-science" role="tab" aria-selected="false">Data Science & Dashboards</button>
-          <button type="button" class="filter-btn" data-filter="software-engineering" role="tab" aria-selected="false">Software Engineering & IoT</button>
+          <button type="button" class="filter-btn" data-filter="data-science" role="tab" aria-selected="false">Data Science &amp; Dashboards</button>
+          <button type="button" class="filter-btn" data-filter="software-engineering" role="tab" aria-selected="false">Software Engineering &amp; IoT</button>
         </div>
 
         <!-- Dynamic Projects Grid Container -->
@@ -469,7 +706,7 @@
 
     <!-- Project Deep-Dive Modal / Drawer Dialog -->
     <div id="project-modal" class="project-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-      <div class="modal-dialog" id="modal-dialog">
+      <div class="modal-dialog" id="modal-dialog" data-lenis-prevent>
         <div class="modal-header">
           <div>
             <span id="modal-badge" class="project-badge-pill">Category Badge</span>
@@ -483,7 +720,7 @@
 
         <div class="modal-body">
           <div class="modal-illustration-container">
-            <img id="modal-illustration-img" src="" alt="Project computational vector illustration" style="width: 100%; height: auto;" />
+            <img id="modal-illustration-img" alt="Project computational vector illustration" width="480" height="280" style="width: 100%; height: auto; display: none;" />
           </div>
 
           <div>
@@ -528,7 +765,6 @@
     <section id="experience" class="section-wrapper" aria-labelledby="experience-heading">
       <div class="container">
         <div class="section-header">
-          <div class="section-kicker">05 // PRACTICAL INDUSTRY EXPERIENCE</div>
           <h2 id="experience-heading" class="section-title">Learning by Building in the Real World.</h2>
           <p class="section-subtitle">Real-world engineering internships applying software design, data pipelines, quality control, and IoT telemetry on industrial shopfloors.</p>
         </div>
@@ -599,7 +835,6 @@
     <section id="toolkit" class="section-wrapper" aria-labelledby="toolkit-heading">
       <div class="container">
         <div class="section-header">
-          <div class="section-kicker">06 // COMPUTATIONAL CAPABILITIES</div>
           <h2 id="toolkit-heading" class="section-title">My Toolkit for Building Intelligence.</h2>
           <p class="section-subtitle">Organized by architectural domain. Hover or tap each tool to view practical engineering context.</p>
         </div>
@@ -732,7 +967,6 @@
     <section id="education" class="section-wrapper" aria-labelledby="education-heading">
       <div class="container">
         <div class="section-header">
-          <div class="section-kicker">07 // ACADEMIC CREDENTIALS</div>
           <h2 id="education-heading" class="section-title">Computer Engineering Education.</h2>
           <p class="section-subtitle">Rigorous undergraduate engineering curriculum covering computing foundations, mathematics, and software development.</p>
         </div>
@@ -766,7 +1000,7 @@
 
           <!-- Academic Vector Art -->
           <div>
-            <img src="assets/illustrations/education-cap.svg" alt="Geometric emblem representing Computer Engineering graduation" loading="lazy" />
+            <img src="assets/illustrations/education-cap.svg" alt="Geometric emblem representing Computer Engineering graduation" width="360" height="260" loading="lazy" />
           </div>
         </div>
       </div>
@@ -778,7 +1012,6 @@
     <section id="contact" class="section-wrapper section-dark" aria-labelledby="contact-heading">
       <div class="container">
         <div class="section-header">
-          <div class="section-kicker">08 // INITIATE COLLABORATION</div>
           <h2 id="contact-heading" class="section-title">Let's Build Something Meaningful.</h2>
           <p class="section-subtitle">I'm always interested in opportunities to learn, collaborate, and build intelligent solutions. Whether you're hiring an ML/AI intern or looking to explore an engineering problem, let's connect.</p>
         </div>
@@ -798,7 +1031,7 @@
                     <a href="mailto:pc000060@gmail.com" class="contact-item-value" style="color: var(--color-ivory);">pc000060@gmail.com</a>
                   </div>
                 </div>
-                <button type="button" class="btn btn-sm btn-ghost-dark copy-email-btn" title="Copy email address to clipboard">
+                <button type="button" class="btn btn-sm btn-ghost-dark copy-email-btn" title="Copy email address to clipboard" data-cursor-label="COPY">
                   Copy
                 </button>
               </div>
@@ -865,7 +1098,7 @@
                 <textarea id="contact-message" class="form-textarea" placeholder="Describe your team, project, or inquiry..." required style="background-color: var(--color-charcoal); color: var(--color-ivory); border-color: rgba(243, 239, 230, 0.2);"></textarea>
               </div>
 
-              <button type="submit" class="btn btn-primary" style="margin-top: var(--space-2); width: 100%;">
+              <button type="submit" class="btn btn-primary no-magnetic" style="margin-top: var(--space-2); width: 100%;" data-cursor-label="SEND">
                 Send Inquiry to Pinak
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
               </button>
@@ -920,21 +1153,28 @@
   </div>
 
   <!-- Back to Top Button -->
-  <button id="back-to-top" class="back-to-top" aria-label="Scroll back to top">
+  <button id="back-to-top" class="back-to-top" aria-label="Scroll back to top" data-cursor-label="TOP">
     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
   </button>
 
-  <!-- External CDNs: GSAP, Lucide Icons -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Custom Desktop Cursor (Fine pointers only; disabled on touch and reduced motion) -->
+  <div id="custom-cursor" class="custom-cursor" aria-hidden="true">
+    <div class="cursor-ring"><span class="cursor-label"></span></div>
+    <div class="cursor-dot"></div>
+  </div>
+
+  <!-- External CDNs: Lenis Smooth Scroll, GSAP (Deferred non-blocking execution in document order) -->
+  <script defer src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
   <!-- Project Scripts -->
-  <script src="js/projects-data.js"></script>
-  <script src="js/journey.js"></script>
-  <script src="js/projects.js"></script>
-  <script src="js/animations.js"></script>
-  <script src="js/main.js"></script>
+  <script defer src="js/projects-data.js"></script>
+  <script defer src="js/journey.js"></script>
+  <script defer src="js/projects.js"></script>
+  <script defer src="js/animations.js"></script>
+  <script defer src="js/main.js"></script>
+  <script defer src="js/three-hero.js"></script>
 
 </body>
 </html>

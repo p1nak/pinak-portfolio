@@ -2,11 +2,13 @@
  * Pinak Chauhan - Portfolio Project Data
  * Structured, editable project repository containing all verified metadata,
  * metrics, architecture highlights, links, and contextual notes.
+ * Restored from commit b8fe8df / a7c969d with verified accuracy refinements.
  */
 
 const PROJECTS_DATA = [
   {
     id: "moodline",
+    slug: "moodline",
     title: "Moodline",
     subtitle: "AI-Powered Emotion Prediction System",
     category: "deep-learning",
@@ -30,6 +32,7 @@ const PROJECTS_DATA = [
   },
   {
     id: "credit-ledger",
+    slug: "credit-ledger",
     title: "Credit Ledger",
     subtitle: "ML-Based Loan Risk Assessment System",
     category: "machine-learning",
@@ -48,11 +51,12 @@ const PROJECTS_DATA = [
     githubUrl: "https://github.com/p1nak/Credit-Ledger-ML-Based-Loan-Risk-Assessment-System",
     liveUrl: "https://credit-ledger-ml-based-loan-risk.onrender.com",
     architecture: "Applicant Demographics & Financial History → Missing Value Imputation → One-Hot & Robust Scaling → XGBoost Gradient Boosting → Isotonic Calibration (Threshold: 0.7331) → SHAP Feature Explanations → FastAPI Response",
-    disclaimer: "Evaluation Context: Metrics represent validation benchmarks on the designated research dataset. This prototype illustrates decision modeling techniques and is not intended for unsupervised commercial credit underwriting.",
+    disclaimer: "Evaluation Context: Metrics represent research validation benchmarks on the designated dataset, not proof of commercial underwriting performance.",
     illustration: "credit-svg"
   },
   {
     id: "nyc-airbnb",
+    slug: "nyc-airbnb",
     title: "NYC Room Type Predictor",
     subtitle: "Spatial & Listing Classification Model",
     category: "machine-learning",
@@ -76,14 +80,15 @@ const PROJECTS_DATA = [
   },
   {
     id: "gearbox-maintenance",
+    slug: "gearbox-maintenance",
     title: "Gearbox Predictive Maintenance",
     subtitle: "Vibration Sensor Signal Analysis",
     category: "machine-learning",
     badge: "Industrial Diagnostics & Signal Processing",
     flagship: false,
     year: "2026",
-    summary: "Fault detection architecture analyzing 52 extracted signal features across four vibration channels to distinguish healthy versus broken gear states.",
-    description: "Industrial machinery diagnostics require rapid anomaly identification to prevent catastrophic downtime. This project evaluates four synchronous vibration sensor channels installed on a planetary gearbox testbench. It computes 52 statistical, time-domain, and frequency-domain characteristics (RMS, kurtosis, crest factor, spectral power). Multiple algorithms (Logistic Regression, KNN, Decision Tree, Random Forest, SVM) were systematically benchmarked with stratified k-fold cross-validation.",
+    summary: "Experimental fault detection architecture analyzing 52 extracted statistical and FFT signal features across four vibration channels to distinguish healthy versus broken gear states.",
+    description: "Industrial machinery diagnostics require rapid anomaly identification to prevent catastrophic downtime. This project evaluates four synchronous vibration sensor channels installed on a planetary gearbox testbench. It computes 52 statistical, time-domain, and FFT frequency-domain characteristics (RMS, kurtosis, crest factor, spectral power). Five algorithms (Logistic Regression, KNN, Decision Tree, Random Forest, SVM) were systematically benchmarked with cross-validation.",
     metrics: [
       { label: "Sensor Channels", value: "4 Accelerometers" },
       { label: "Extracted Features", value: "52 Statistical/FFT", highlight: true },
@@ -93,19 +98,20 @@ const PROJECTS_DATA = [
     techStack: ["Python", "SciPy", "Scikit-Learn", "Signal Processing", "Feature Extraction", "Pandas"],
     githubUrl: "https://github.com/p1nak/predictive-maintenance-gearbox",
     liveUrl: null,
-    architecture: "4-Channel Accelerometer Time-Series → Windowed Slicing → 52 Statistical/Spectral Feature Extraction → Standardization → Cross-Validated Multi-Model Evaluation (SVM / Random Forest) → Fault Diagnostic Classification",
-    disclaimer: "Dataset Context: High internal cross-validation scores reflect controlled laboratory bench conditions and specific vibration sensor configurations; real-world industrial noise and wear variation require domain transfer adaptation.",
+    architecture: "4-Channel Accelerometer Time-Series → Windowed Slicing → 52 Statistical/FFT Feature Extraction → Standardization → Cross-Validated Multi-Model Evaluation (SVM / Random Forest) → Fault Diagnostic Classification",
+    disclaimer: "Experimental Testbench Context: Validation results depend on the available experimental gearbox testbench dataset and cross-validation protocol rather than proven general industrial deployment performance.",
     illustration: "gearbox-svg"
   },
   {
     id: "student-wellness",
+    slug: "student-wellness",
     title: "Student Wellness Score",
     subtitle: "Mental Health Regression Estimator",
     category: "machine-learning",
     badge: "Health Informatics & Regression",
     flagship: false,
     year: "2026",
-    summary: "Multivariate regression model predicting student mental health composite indicators from 12 behavioral and academic lifestyle features.",
+    summary: "Multivariate Random Forest regression model predicting student mental health composite indicators from 12 behavioral and academic lifestyle features.",
     description: "An empirical investigation into factors affecting student wellbeing across 5,000 academic records. Utilizing Random Forest regression, the model evaluates 12 input features including sleep duration, study pressure, academic workload, financial stress, and physical activity. Evaluated against rigorous regression baselines, achieving an R² of 0.8776 with an MAE of 0.3472 and RMSE of 0.4637.",
     metrics: [
       { label: "Coefficient R²", value: "0.8776", highlight: true },
@@ -116,12 +122,13 @@ const PROJECTS_DATA = [
     techStack: ["Random Forest Regressor", "Scikit-Learn", "FastAPI", "Pandas", "NumPy", "Seaborn"],
     githubUrl: "https://github.com/p1nak/Mental-Health-Score",
     liveUrl: "https://mental-health-score-4-nvs1.onrender.com",
-    architecture: "12 Lifestyle Features → Variance Thresholding → StandardScaler → Random Forest Regressor (200 trees, max depth 12) → Composite Wellbeing Score Estimation → FastAPI Endpoint",
-    disclaimer: "Educational Disclaimer: This project provides an educational estimate only. It is not a clinical assessment, diagnosis, or substitute for professional medical or psychological care.",
+    architecture: "12 Lifestyle Features → Variance Thresholding → StandardScaler → Random Forest Regressor → Composite Wellbeing Score Estimation → FastAPI Endpoint",
+    disclaimer: "This project provides an educational estimate only. It is not a clinical assessment, diagnosis, or substitute for professional care.",
     illustration: "wellness-svg"
   },
   {
     id: "gyan-prapti",
+    slug: "gyan-prapti",
     title: "Gyan Prapti",
     subtitle: "Smart Capacity Building Platform (SIH)",
     category: "software-engineering",
@@ -129,10 +136,10 @@ const PROJECTS_DATA = [
     flagship: true,
     year: "2026",
     summary: "Comprehensive organizational capacity building portal integrating automated competency evaluation, Gemini-assisted question generation, and human-in-the-loop review.",
-    description: "Engineered for national capacity building under the Smart India Hackathon (SIH101 challenge), Gyan Prapti unifies assessment, learning path curation, and enterprise administration. Built on Django 5.2, the system pairs generative AI question synthesis via the Google Gemini API with mandatory human reviewer validation workflows. Official project documentation outlines a scalable architecture supporting 24 relational data models and 57 REST endpoints.",
+    description: "Engineered for national capacity building under the Smart India Hackathon (SIH101 challenge), Gyan Prapti unifies assessment, learning path curation, and enterprise administration. Built on Django 5.2, the system pairs generative AI question synthesis via the Google Gemini API with mandatory human reviewer validation workflows. Technical schema documentation outlines an architecture comprising 24 data models and 57 endpoints.",
     metrics: [
       { label: "Framework", value: "Django 5.2" },
-      { label: "Architecture", value: "24 Models / 57 Endpoints*", highlight: true },
+      { label: "Documented Schema", value: "24 Models / 57 Endpoints*", highlight: true },
       { label: "GenAI Engine", value: "Google Gemini API" },
       { label: "Review Model", value: "Human-in-the-Loop" }
     ],
@@ -140,21 +147,22 @@ const PROJECTS_DATA = [
     githubUrl: "https://github.com/p1nak/GyanPrapti-SIH101",
     liveUrl: null,
     architecture: "Role-Based Portal → Competency Taxonomy Engine → Gemini API Automated MCQ Generator → Human Trainer Approval Queue → Assessment Evaluation Engine → Analytical Reporting Dashboards",
-    disclaimer: "*Architecture Specification: The 24 data models and 57 endpoints are cited directly from the project's technical documentation and design schema.",
+    disclaimer: "*Schema Attribution: The 24 data models and 57 endpoints are cited from the project's technical schema documentation.",
     illustration: "gyan-svg"
   },
   {
     id: "lstm-next-word",
+    slug: "lstm-next-word",
     title: "LSTM Next Word Predictor",
     subtitle: "Sequential Language Model",
     category: "deep-learning",
     badge: "Recurrent Neural Networks",
     flagship: false,
     year: "2026",
-    summary: "Long Short-Term Memory sequence model generating probabilistic lexical completions from text corpora with an interactive Streamlit UI.",
-    description: "An implementation of recurrent neural mechanics for language modeling. Designed with Keras LSTM cells to learn long-range dependency contexts across literary texts. Features automated tokenization sequences, categorical cross-entropy loss convergence, temperature-controlled next-token sampling, and an intuitive Streamlit interface for live interactive typing synthesis.",
+    summary: "Stacked LSTM sequence model generating probabilistic lexical completions from text corpora with an interactive Streamlit UI.",
+    description: "An implementation of recurrent neural mechanics for language modeling. Designed with stacked Keras LSTM cells to learn long-range dependency contexts across literary texts. Features automated tokenization sequences, categorical cross-entropy loss convergence, temperature-controlled next-token sampling, and an intuitive Streamlit interface for live interactive typing synthesis.",
     metrics: [
-      { label: "Core Model", value: "LSTM Recurrent Cells" },
+      { label: "Core Model", value: "Stacked LSTM Cells" },
       { label: "Framework", value: "TensorFlow / Keras" },
       { label: "Interface", value: "Streamlit UI", highlight: true },
       { label: "Sampling", value: "Temperature Softmax" }
@@ -162,12 +170,13 @@ const PROJECTS_DATA = [
     techStack: ["TensorFlow", "Keras", "LSTM", "Python", "Streamlit", "NLTK", "Text Preprocessing"],
     githubUrl: "https://github.com/p1nak/LSTM-Next-Word-Prediction",
     liveUrl: null,
-    architecture: "Character / Word Corpus → N-gram Sequence Generation → One-Hot / Embedding Encoding → 2-Tier Stacked LSTM Layers → Dense Softmax → Temperature Token Sampler → Streamlit Live Output",
+    architecture: "Character / Word Corpus → N-gram Sequence Generation → Word Embedding Encoding → Stacked LSTM Layers → Dense Softmax → Temperature Token Sampler → Streamlit Live Output",
     disclaimer: null,
     illustration: "lstm-svg"
   },
   {
     id: "global-placement",
+    slug: "global-placement",
     title: "Global Student Placement Dashboard",
     subtitle: "Academic Career Analytics Suite",
     category: "data-science",
@@ -191,52 +200,55 @@ const PROJECTS_DATA = [
   },
   {
     id: "amazon-stock",
+    slug: "amazon-stock",
     title: "Amazon Stock Analysis Dashboard",
     subtitle: "Financial Time-Series & Volatility Tracker",
     category: "data-science",
     badge: "Quantitative Finance & Time-Series",
     flagship: false,
     year: "2026",
-    summary: "Quantitative financial dashboard analyzing historical Amazon equity performance, rolling moving averages, and trading volume spikes.",
-    description: "Built for quantitative exploration of equity price action. This dashboard performs algorithmic time-series decomposition on historical AMZN ticker records. Features automated calculation of 20/50/200-day Simple and Exponential Moving Averages (SMA/EMA), Bollinger Band volatility channels, Relative Strength Index (RSI), and trading volume correlations rendered in high-refresh Plotly interfaces.",
+    summary: "Quantitative financial dashboard analyzing historical Amazon equity performance, rolling moving averages (SMA), Bollinger Bands, and RSI.",
+    description: "Built for quantitative exploration of equity price action. This dashboard performs algorithmic time-series decomposition on historical AMZN ticker records. Features automated calculation of Simple Moving Averages (SMA), Bollinger Band volatility channels, Relative Strength Index (RSI), and trading volume correlations rendered in high-refresh Plotly interfaces.",
     metrics: [
       { label: "Analytics Engine", value: "Time-Series Rolling Ops", highlight: true },
-      { label: "Key Indicators", value: "SMA / EMA / Volatility" },
-      { label: "Visualization", value: "Plotly Interactive Suite" },
+      { label: "Key Indicators", value: "SMA / Bollinger / RSI" },
+      { label: "Visualization", value: "Plotly + Dash Suite" },
       { label: "Stack", value: "Python, Dash, Pandas" }
     ],
     techStack: ["Plotly", "Dash", "Pandas", "Time-Series Analysis", "Python", "Financial Modeling"],
     githubUrl: "https://github.com/p1nak/amazon-stock-analysis-dashboard",
     liveUrl: null,
-    architecture: "OHLCV Stock History → Date Indexing & Missing Fill → Rolling Window Technical Metric Computation → Plotly Interactive Candlestick & Indicator Layers → Live Filterable Dashboard",
+    architecture: "OHLCV Stock History → Date Indexing & Missing Fill → Rolling Window Technical Metric Computation (SMA, Bollinger Bands, RSI) → Plotly Interactive Candlestick & Indicator Layers → Live Filterable Dashboard",
     disclaimer: null,
     illustration: "stock-svg"
   },
   {
     id: "ml-work",
+    slug: "ml-work",
     title: "ML Work — Core Algorithms & Pipelines",
     subtitle: "Foundational Machine Learning Implementations",
     category: "machine-learning",
     badge: "Algorithmic Rigor & Notebooks",
     flagship: false,
     year: "2026",
-    summary: "Systematic collection of end-to-end machine learning workflows spanning supervised, unsupervised, dimensionality reduction, and hyperparameter tuning.",
-    description: "A centralized repository cataloging mathematical and practical implementations of core machine learning techniques. Encompasses rigorous exploratory data analysis (EDA), data cleaning methodologies, outlier treatments, feature importance evaluation, cross-validation architectures, and model parameter optimization via GridSearchCV and RandomizedSearchCV across canonical benchmarks.",
+    summary: "Systematic collection of end-to-end machine learning workflows spanning PCA dimensionality reduction, GridSearchCV hyperparameter tuning, and five-fold stratified cross-validation.",
+    description: "A centralized repository cataloging mathematical and practical implementations of core machine learning techniques in Scikit-learn. Encompasses rigorous exploratory data analysis (EDA), data cleaning methodologies, outlier treatments, PCA dimensionality reduction, five-fold stratified cross-validation evaluation loops, and model parameter optimization via GridSearchCV.",
     metrics: [
-      { label: "Techniques", value: "Supervised & Unsupervised", highlight: true },
+      { label: "Validation", value: "5-Fold Stratified CV", highlight: true },
       { label: "Feature Pipeline", value: "PCA, Encoding, Scaling" },
       { label: "Optimization", value: "GridSearchCV Tuning" },
       { label: "Tooling", value: "Jupyter & Scikit-Learn" }
     ],
-    techStack: ["Python", "Scikit-Learn", "Pandas", "NumPy", "Matplotlib", "Seaborn", "Jupyter"],
+    techStack: ["Python", "Scikit-Learn", "PCA", "GridSearchCV", "Pandas", "NumPy", "Jupyter"],
     githubUrl: "https://github.com/p1nak/ML-WORK",
     liveUrl: null,
-    architecture: "Raw Experimental Datasets → Comprehensive EDA & Correlation Matrices → Feature Transformation & PCA → Model Benchmarks (Linear, Tree, Ensemble) → Metric Evaluation Curves",
+    architecture: "Raw Experimental Datasets → Comprehensive EDA & Correlation Matrices → Feature Transformation & PCA → 5-Fold Stratified Cross-Validation & GridSearchCV → Metric Evaluation Curves",
     disclaimer: null,
     illustration: "mlwork-svg"
   },
   {
     id: "industrial-internship",
+    slug: "industrial-internship",
     title: "Industrial Systems & Telemetry Suite",
     subtitle: "Digital QC, QR Serialization & Telemetry",
     category: "software-engineering",
@@ -244,11 +256,11 @@ const PROJECTS_DATA = [
     flagship: false,
     year: "2026",
     summary: "Production-grade industrial software suite featuring a Flask digital QC audit platform, QR machine tracking, and Sand Plant IoT telemetry ingestion.",
-    description: "Developed during engineering practice with Rhino Machines Pvt. Ltd. The suite replaces paper inspection processes with a secure Flask web portal featuring role-based access control, photographic defect logs, and PDF inspection report generators. Furthermore, it incorporates QR code serialization for machine parts and telemetry pipelines integrating Python, InfluxDB, and Grafana for real-time sand casting plant energy and vibration monitoring.",
+    description: "Developed during engineering practice with Rhino Machines Pvt. Ltd. The suite replaces paper inspection processes with a secure Flask web portal featuring role-based access control, photographic defect logs, and automated PDF inspection report generators. Furthermore, it incorporates QR code serialization for machine assemblies and telemetry pipelines integrating Python, InfluxDB, and Grafana for sand plant monitoring.",
     metrics: [
       { label: "Industrial Web App", value: "Flask + SQLite" },
       { label: "Telemetry Pipeline", value: "InfluxDB + Grafana", highlight: true },
-      { label: "Field Capability", value: "QR Equipment Serialization" },
+      { label: "Field Capability", value: "QR Equipment Tracking" },
       { label: "Deployment", value: "Shopfloor Production" }
     ],
     techStack: ["Flask", "Python", "SQLite", "InfluxDB", "Grafana", "Pandas", "IoT Telemetry"],

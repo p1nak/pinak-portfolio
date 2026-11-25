@@ -1,13 +1,13 @@
 /**
  * MAIN LOGIC & INTERACTIONS — PINAK CHAUHAN PORTFOLIO
- * Navigation spy, mobile menu, email clipboard copy, live time ticker,
- * contact form handler, and back-to-top button.
+ * High-performance, debounced navigation spy, Lenis smooth anchor links,
+ * mobile menu, clipboard copy, live IST clock, and validated contact dispatcher.
  */
 
 (function () {
   'use strict';
 
-  // DOM Elements
+  // Cached DOM Elements
   const mobileToggle = document.getElementById('mobile-toggle');
   const mobileMenu = document.getElementById('mobile-menu');
   const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
@@ -18,19 +18,50 @@
   const copyEmailBtns = document.querySelectorAll('.copy-email-btn');
   const localTimeDisplay = document.getElementById('local-time-ticker');
   const contactForm = document.getElementById('contact-form');
+  const sections = Array.from(document.querySelectorAll('section[id]'));
+
+  let isScrollTicking = false;
+  let toastTimer = null;
+  let sectionMetrics = [];
+  let lastActiveNavId = null;
+  let lastBackToTopVisible = null;
+  let closeMobileMenuRef = null;
+  let closeTooltipsRef = null;
 
   function init() {
     setupMobileMenu();
-    setupNavSpy();
-    setupBackToTop();
+    setupSmoothAnchors();
+    setupUnifiedScrollWatcher();
+    setupBackToTopAction();
     setupClipboardActions();
     setupLiveClock();
     setupContactForm();
+    setupToolkitTooltips();
+    setupGlobalKeyShortcuts();
+  }
+
+  function setupGlobalKeyShortcuts() {
+    document.addEventListener('keydown', (e) => {
+      if (e.key !== 'Escape') return;
+      if (closeMobileMenuRef && mobileMenu?.classList.contains('open')) {
+        closeMobileMenuRef();
+        mobileToggle?.focus();
+      }
+      if (closeTooltipsRef) closeTooltipsRef();
+    });
   }
 
   // Mobile Menu Toggle
   function setupMobileMenu() {
     if (!mobileToggle || !mobileMenu) return;
+
+    function closeMobileMenu() {
+      mobileMenu.classList.remove('open');
+      mobileToggle.classList.remove('active');
+      mobileToggle.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+    closeMobileMenuRef = closeMobileMenu;
 
     mobileToggle.addEventListener('click', () => {
       const isOpen = mobileMenu.classList.toggle('open');
@@ -40,58 +71,113 @@
     });
 
     mobileMenuLinks.forEach((link) => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.remove('open');
-        mobileToggle.classList.remove('active');
-        mobileToggle.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
+      link.addEventListener('click', closeMobileMenu);
+    });
+  }
+
+  // Smooth Lenis Anchor Scrolling
+  function setupSmoothAnchors() {
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener('click', (e) => {
+        const href = anchor.getAttribute('href');
+        if (href === '#' || !href) return;
+        const target = document.querySelector(href);
+        if (!target) return;
+
+        // If Lenis is globally available, scroll smoothly with offset
+        if (window.lenis) {
+          e.preventDefault();
+          window.lenis.scrollTo(target, { offset: -64, duration: 1.15 });
+        }
       });
     });
   }
 
-  // Active Navigation Spy on Scroll
-  function setupNavSpy() {
-    const sections = document.querySelectorAll('section[id]');
-    if (!sections.length) return;
-
-    window.addEventListener('scroll', () => {
-      const scrollPos = window.scrollY + 140;
-
-      sections.forEach((section) => {
-        const top = section.offsetTop;
-        const height = section.offsetHeight;
-        const id = section.getAttribute('id');
-
-        if (scrollPos >= top && scrollPos < top + height) {
-          navLinks.forEach((link) => {
-            if (link.getAttribute('href') === `#${id}`) {
-              link.classList.add('active');
-            } else {
-              link.classList.remove('active');
-            }
-          });
-        }
-      });
-    }, { passive: true });
+  // Unified requestAnimationFrame Scroll Watcher (Cached Metrics -> Zero Scroll Layout Reads)
+  function cacheSectionMetrics() {
+    sectionMetrics = sections.map((sec) => ({
+      id: sec.getAttribute('id'),
+      top: sec.offsetTop
+    }));
   }
 
-  // Back to Top Button
-  function setupBackToTop() {
-    if (!backToTopBtn) return;
+  function setupUnifiedScrollWatcher() {
+    cacheSectionMetrics();
+
+    let resizeTimer = null;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        cacheSectionMetrics();
+        handleScrollUpdates();
+      }, 150);
+    }, { passive: true });
+
+    window.addEventListener('load', () => {
+      cacheSectionMetrics();
+      handleScrollUpdates();
+    }, { once: true });
+
+    document.addEventListener('portfolio:layout-changed', () => {
+      cacheSectionMetrics();
+      handleScrollUpdates();
+    });
 
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 450) {
-        backToTopBtn.classList.add('visible');
-      } else {
-        backToTopBtn.classList.remove('visible');
+      if (!isScrollTicking) {
+        requestAnimationFrame(() => {
+          handleScrollUpdates();
+          isScrollTicking = false;
+        });
+        isScrollTicking = true;
       }
     }, { passive: true });
 
-    backToTopBtn.addEventListener('click', () => {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
+    handleScrollUpdates();
+  }
+
+  function handleScrollUpdates() {
+    const scrollY = window.scrollY;
+
+    // 1. Back to Top Button Visibility (only mutate DOM on state transition)
+    if (backToTopBtn) {
+      const shouldShow = scrollY > 400;
+      if (shouldShow !== lastBackToTopVisible) {
+        lastBackToTopVisible = shouldShow;
+        backToTopBtn.classList.toggle('visible', shouldShow);
+      }
+    }
+
+    // 2. Nav Link Active Spy
+    if (!sectionMetrics.length || !navLinks.length) return;
+    const probeY = scrollY + 160;
+    let matchedId = sectionMetrics[0]?.id || null;
+
+    for (let i = sectionMetrics.length - 1; i >= 0; i--) {
+      if (probeY >= sectionMetrics[i].top) {
+        matchedId = sectionMetrics[i].id;
+        break;
+      }
+    }
+
+    if (matchedId && matchedId !== lastActiveNavId) {
+      lastActiveNavId = matchedId;
+      navLinks.forEach((link) => {
+        link.classList.toggle('active', link.getAttribute('href') === `#${matchedId}`);
       });
+    }
+  }
+
+  // Back to Top Action
+  function setupBackToTopAction() {
+    if (!backToTopBtn) return;
+
+    backToTopBtn.addEventListener('click', () => {
+      if (window.lenis) {
+        window.lenis.scrollTo(0, { duration: 1.2 });
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
     });
   }
 
@@ -129,10 +215,11 @@
 
   function showToast(message) {
     if (!toastNotice || !toastMessage) return;
+    clearTimeout(toastTimer);
     toastMessage.textContent = message;
     toastNotice.classList.add('show');
 
-    setTimeout(() => {
+    toastTimer = setTimeout(() => {
       toastNotice.classList.remove('show');
     }, 3200);
   }
@@ -141,28 +228,51 @@
   function setupLiveClock() {
     if (!localTimeDisplay) return;
 
+    let formatter = null;
+    try {
+      formatter = new Intl.DateTimeFormat([], {
+        timeZone: 'Asia/Kolkata',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: false
+      });
+    } catch (e) {
+      formatter = null;
+    }
+
+    let clockTimer = null;
+
     function updateTime() {
-      try {
-        const options = {
-          timeZone: 'Asia/Kolkata',
-          hour: '2-digit',
-          minute: '2-digit',
-          second: '2-digit',
-          hour12: false
-        };
-        const formatter = new Intl.DateTimeFormat([], options);
-        const timeStr = formatter.format(new Date());
-        localTimeDisplay.textContent = `${timeStr} IST • Vadodara, Gujarat, IN`;
-      } catch (e) {
-        localTimeDisplay.textContent = `Vadodara, Gujarat, IN (IST)`;
+      if (!formatter) {
+        localTimeDisplay.textContent = 'Vadodara, Gujarat, IN (IST)';
+        return;
+      }
+      localTimeDisplay.textContent = `${formatter.format(new Date())} IST • Vadodara, Gujarat, IN`;
+    }
+
+    function startClock() {
+      if (clockTimer) return;
+      updateTime();
+      clockTimer = setInterval(updateTime, 1000);
+    }
+
+    function stopClock() {
+      if (clockTimer) {
+        clearInterval(clockTimer);
+        clockTimer = null;
       }
     }
 
-    updateTime();
-    setInterval(updateTime, 1000);
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) stopClock();
+      else startClock();
+    });
+
+    startClock();
   }
 
-  // Functional Contact Form
+  // Functional Contact Form Dispatcher
   function setupContactForm() {
     if (!contactForm) return;
 
@@ -183,18 +293,15 @@
         return;
       }
 
-      // Display loading state
       const originalBtnText = submitBtn.innerHTML;
       submitBtn.disabled = true;
-      submitBtn.innerHTML = `Sending...`;
+      submitBtn.innerHTML = `Preparing Message...`;
 
-      // Construct mailto link with encoded parameters
       const subject = encodeURIComponent(`Portfolio Inquiry from ${name}`);
       const body = encodeURIComponent(`Sender: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
       const mailtoUrl = `mailto:pc000060@gmail.com?subject=${subject}&body=${body}`;
 
       setTimeout(() => {
-        // Open user's email client with pre-filled content
         window.location.href = mailtoUrl;
 
         showToast('Opening your email client to send message to Pinak...');
@@ -205,11 +312,74 @@
         setTimeout(() => {
           submitBtn.innerHTML = originalBtnText;
         }, 3500);
-      }, 500);
+      }, 400);
     });
   }
 
-  // Expose toast globally if needed
+  // Accessible Tap/Hover/Keyboard Tooltips for Technical Toolkit (Event-Delegated Document Listeners)
+  function setupToolkitTooltips() {
+    const pills = Array.from(document.querySelectorAll('.toolkit-pill[data-tooltip]'));
+    if (!pills.length) return;
+
+    let openPill = null;
+
+    function alignTooltip(pill) {
+      const rect = pill.getBoundingClientRect();
+      pill.classList.remove('tooltip-align-left', 'tooltip-align-right');
+      if (rect.left < 120) {
+        pill.classList.add('tooltip-align-left');
+      } else if (window.innerWidth - rect.right < 120) {
+        pill.classList.add('tooltip-align-right');
+      }
+    }
+
+    function closeAllTooltips(exceptPill) {
+      if (openPill && openPill !== exceptPill) {
+        openPill.classList.remove('is-tooltip-open');
+        openPill.setAttribute('aria-expanded', 'false');
+        openPill = null;
+      }
+    }
+    closeTooltipsRef = () => closeAllTooltips(null);
+
+    function toggleTooltip(pill) {
+      const wasOpen = pill.classList.contains('is-tooltip-open');
+      closeAllTooltips();
+      if (!wasOpen) {
+        alignTooltip(pill);
+        pill.classList.add('is-tooltip-open');
+        pill.setAttribute('aria-expanded', 'true');
+        openPill = pill;
+      }
+    }
+
+    pills.forEach((pill) => {
+      if (!pill.hasAttribute('tabindex')) pill.setAttribute('tabindex', '0');
+      if (!pill.hasAttribute('role')) pill.setAttribute('role', 'button');
+      pill.setAttribute('aria-expanded', 'false');
+
+      pill.addEventListener('mouseenter', () => alignTooltip(pill), { passive: true });
+      pill.addEventListener('focus', () => alignTooltip(pill), { passive: true });
+      pill.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleTooltip(pill);
+      });
+      pill.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          toggleTooltip(pill);
+        }
+      });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (openPill && !e.target.closest('.toolkit-pill')) {
+        closeAllTooltips();
+      }
+    });
+  }
+
+  // Expose toast globally
   window.portfolioShowToast = showToast;
 
   if (document.readyState === 'loading') {

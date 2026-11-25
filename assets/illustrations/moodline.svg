@@ -33,8 +33,8 @@
   </g>
 
   <!-- Swiss Editorial Coordinate Tag -->
-  <text x="40" y="32" fill="#9CAF88" font-family="'JetBrains Mono', monospace" font-size="9" letter-spacing="1.5">SYS // BiGRU.NLP.EMOTION_VEC</text>
-  <text x="360" y="32" fill="#D8C9B5" font-family="'JetBrains Mono', monospace" font-size="9" opacity="0.7">ACC: 91.20%</text>
+  <text x="24" y="32" fill="#9CAF88" font-family="'JetBrains Mono', monospace" font-size="7.5" letter-spacing="0.8">SYS // BiGRU.NLP.EMOTION_VEC</text>
+  <text x="456" y="32" fill="#D8C9B5" font-family="'JetBrains Mono', monospace" font-size="7.5" text-anchor="end" opacity="0.85">ACC: 91.20% • 6 STATES</text>
 
   <!-- BiGRU Forward Layer (Past -> Future) -->
   <path d="M 50 140 C 90 90, 130 90, 170 140 C 210 190, 250 190, 290 140 C 330 90, 370 90, 430 140" fill="none" stroke="url(#ml-wave-fwd)" stroke-width="2.5" stroke-linecap="round"/>

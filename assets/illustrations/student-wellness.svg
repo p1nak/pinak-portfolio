@@ -12,8 +12,8 @@
 
   <rect width="480" height="280" fill="url(#sw-bg)" rx="8"/>
 
-  <text x="40" y="32" fill="#9CAF88" font-family="'JetBrains Mono', monospace" font-size="9" letter-spacing="1.5">REGRESSION // 5,000 COHORT LIFESTYLE FIT</text>
-  <text x="340" y="32" fill="#D8C9B5" font-family="'JetBrains Mono', monospace" font-size="9">R²: 0.8776 | MAE: 0.3472</text>
+  <text x="24" y="32" fill="#9CAF88" font-family="'JetBrains Mono', monospace" font-size="7.5" letter-spacing="0.8">REGRESSION // 5,000 COHORT STUDY</text>
+  <text x="456" y="32" fill="#D8C9B5" font-family="'JetBrains Mono', monospace" font-size="7.5" text-anchor="end">R²: 0.8776 | MAE: 0.3472</text>
 
   <!-- Left: 12-Dimensional Lifestyle Radar Compass -->
   <g transform="translate(130, 140)">
