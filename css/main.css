@@ -224,7 +224,7 @@ img, svg {
   font-weight: 500;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1260px) {
   .status-pill {
     display: flex;
   }
@@ -260,17 +260,17 @@ img, svg {
 .nav-links {
   display: none;
   align-items: center;
-  gap: var(--space-4);
+  gap: var(--space-5);
   list-style: none;
 }
 
-@media (min-width: 920px) {
+@media (min-width: 992px) {
   .nav-links {
     display: flex;
   }
 }
 
-@media (min-width: 1120px) {
+@media (min-width: 1160px) {
   .nav-links {
     gap: var(--space-6);
   }
@@ -308,6 +308,13 @@ img, svg {
   gap: var(--space-3);
 }
 
+/* Compact Mobile Header Sizing */
+@media (max-width: 640px) {
+  :root {
+    --header-height: 62px;
+  }
+}
+
 @media (max-width: 540px) {
   .nav-brand {
     gap: var(--space-2);
@@ -324,11 +331,7 @@ img, svg {
   }
 
   .brand-role {
-    font-size: 0.56rem;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 155px;
+    display: none;
   }
 
   .nav-actions {
@@ -341,9 +344,20 @@ img, svg {
   }
 }
 
-@media (max-width: 400px) {
-  .brand-role {
-    display: none;
+@media (max-width: 380px) {
+  .brand-glyph {
+    width: 28px;
+    height: 28px;
+    font-size: 0.76rem;
+  }
+
+  .brand-name {
+    font-size: 0.9rem;
+  }
+
+  .nav-actions .btn-sm {
+    padding: 6px 9px;
+    font-size: 0.74rem;
   }
 }
 
@@ -361,7 +375,14 @@ img, svg {
   background-color: transparent;
 }
 
-@media (min-width: 920px) {
+@media (max-width: 380px) {
+  .mobile-toggle {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+@media (min-width: 992px) {
   .mobile-toggle {
     display: none;
   }
@@ -394,15 +415,17 @@ img, svg {
   left: 0;
   width: 100%;
   height: calc(100vh - var(--header-height));
+  height: calc(100dvh - var(--header-height));
   background-color: var(--bg-primary);
   border-top: var(--border-fine);
   display: flex;
   flex-direction: column;
-  padding: var(--space-8) var(--gutter);
+  padding: var(--space-6) var(--gutter) max(var(--space-8), env(safe-area-inset-bottom));
   transform: translateY(-100%);
   opacity: 0;
+  visibility: hidden;
   pointer-events: none;
-  transition: transform var(--duration-normal) var(--ease-out), opacity var(--duration-normal) var(--ease-out);
+  transition: transform var(--duration-normal) var(--ease-out), opacity var(--duration-normal) var(--ease-out), visibility 0s linear var(--duration-normal);
   z-index: calc(var(--z-nav) - 1);
   overflow-y: auto;
 }
@@ -410,7 +433,9 @@ img, svg {
 .mobile-menu.open {
   transform: translateY(0);
   opacity: 1;
+  visibility: visible;
   pointer-events: auto;
+  transition: transform var(--duration-normal) var(--ease-out), opacity var(--duration-normal) var(--ease-out), visibility 0s linear 0s;
 }
 
 .mobile-menu-links {

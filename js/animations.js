@@ -129,49 +129,44 @@
       gsap.to('.split-line-inner', {
         y: '0%',
         opacity: 1,
-        duration: 1.05,
-        stagger: 0.14,
+        duration: 0.75,
+        stagger: 0.1,
         ease: 'power4.out',
-        delay: 0.15
+        delay: 0.05
       });
 
-      // 2. Hero Content Progressive Cascade
-      gsap.from('.hero-bio', {
-        y: 22,
-        opacity: 0,
-        duration: 0.85,
-        ease: 'power3.out',
-        delay: 0.35
-      });
+      // 2. Hero Content Progressive Cascade (fromTo guarantees opacity: 1 completion)
+      gsap.fromTo('.hero-bio',
+        { y: 18, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.6, ease: 'power3.out', delay: 0.14, clearProps: 'transform,opacity' }
+      );
 
-      gsap.from('.hero-details-row', {
-        y: 18,
-        opacity: 0,
-        duration: 0.8,
-        ease: 'power3.out',
-        delay: 0.45
-      });
+      gsap.fromTo('.hero-details-row',
+        { y: 14, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.55, ease: 'power3.out', delay: 0.2, clearProps: 'transform,opacity' }
+      );
 
-      gsap.from('.hero-actions', {
-        y: 18,
-        opacity: 0,
-        duration: 0.8,
-        ease: 'power3.out',
-        delay: 0.55
-      });
+      gsap.fromTo('.hero-actions',
+        { y: 14, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.55, ease: 'power3.out', delay: 0.26, clearProps: 'transform,opacity' }
+      );
 
-      // 3. Hero Portrait Subtle Lift & Zoom-in
-      gsap.from('.hero-portrait-frame', {
-        scale: 0.93,
-        y: 32,
-        opacity: 0,
-        duration: 1.1,
-        ease: 'expo.out',
-        delay: 0.25,
-        onComplete: () => {
-          document.querySelector('.hero-portrait-frame')?.classList.add('is-revealed');
+      // 3. Hero Portrait Subtle Lift & Zoom-in (never gated behind below-fold reveal-fade)
+      gsap.fromTo('.hero-portrait-frame',
+        { scale: 0.94, y: 20, opacity: 0 },
+        {
+          scale: 1,
+          y: 0,
+          opacity: 1,
+          duration: 0.72,
+          ease: 'expo.out',
+          delay: 0.12,
+          clearProps: 'transform,opacity',
+          onComplete: () => {
+            document.querySelector('.hero-portrait-frame')?.classList.add('is-revealed');
+          }
         }
-      });
+      );
 
       // 4. Section Headers Scrubbed Reveal
       if (window.ScrollTrigger) {

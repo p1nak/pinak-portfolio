@@ -57,6 +57,7 @@
 
     function closeMobileMenu() {
       mobileMenu.classList.remove('open');
+      mobileMenu.setAttribute('aria-hidden', 'true');
       mobileToggle.classList.remove('active');
       mobileToggle.setAttribute('aria-expanded', 'false');
       document.body.style.overflow = '';
@@ -65,14 +66,27 @@
 
     mobileToggle.addEventListener('click', () => {
       const isOpen = mobileMenu.classList.toggle('open');
+      mobileMenu.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
       mobileToggle.classList.toggle('active', isOpen);
-      mobileToggle.setAttribute('aria-expanded', isOpen);
+      mobileToggle.setAttribute('aria-expanded', String(isOpen));
       document.body.style.overflow = isOpen ? 'hidden' : '';
     });
 
     mobileMenuLinks.forEach((link) => {
       link.addEventListener('click', closeMobileMenu);
     });
+
+    const desktopMedia = window.matchMedia('(min-width: 992px)');
+    const handleViewportChange = (e) => {
+      if (e.matches && mobileMenu.classList.contains('open')) {
+        closeMobileMenu();
+      }
+    };
+    if (desktopMedia.addEventListener) {
+      desktopMedia.addEventListener('change', handleViewportChange);
+    } else if (desktopMedia.addListener) {
+      desktopMedia.addListener(handleViewportChange);
+    }
   }
 
   // Smooth Lenis Anchor Scrolling

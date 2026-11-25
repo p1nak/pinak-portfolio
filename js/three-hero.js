@@ -84,8 +84,8 @@
     }
 
     const CONFIG = {
-      nodeCount: isSmallScreen ? 100 : 160,
-      radius: 2.05,
+      nodeCount: isSmallScreen ? 88 : 160,
+      radius: 1.98,
       connectionDistance: isSmallScreen ? 0.96 : 0.84,
       colorCobalt: 0x315BE8,
       colorSage: 0x6C7F59,
@@ -95,10 +95,10 @@
 
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(42, width / height, 0.1, 100);
-    camera.position.z = 5.4;
+    camera.position.z = 6.25;
 
-    renderer.setSize(width, height);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.5));
+    renderer.setSize(width, height, false);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, isSmallScreen ? 1.25 : 1.5));
 
     const sphereGroup = new THREE.Group();
     scene.add(sphereGroup);
@@ -252,18 +252,32 @@
       updateLoopState();
     });
 
-    // Resize handler
+    // Resize handler (keeps CSS 100% responsive sizing via updateStyle: false)
     let resizeTimer = null;
     window.addEventListener('resize', () => {
       clearTimeout(resizeTimer);
       resizeTimer = setTimeout(() => {
-        const w = container.clientWidth || 560;
-        const h = container.clientHeight || 560;
+        const w = container.clientWidth;
+        const h = container.clientHeight;
+        if (!w || !h) return;
+        const small = window.innerWidth < 680;
         camera.aspect = w / h;
         camera.updateProjectionMatrix();
-        renderer.setSize(w, h);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, small ? 1.25 : 1.5));
+        renderer.setSize(w, h, false);
       }, 120);
     }, { passive: true });
+
+    const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const handleMotionChange = (e) => {
+      if (e.matches) {
+        disposeScene();
+        activateFallback();
+      }
+    };
+    if (motionQuery.addEventListener) {
+      motionQuery.addEventListener('change', handleMotionChange);
+    }
 
     // WebGL cleanup & context loss safety
     function disposeScene() {
