@@ -6,6 +6,10 @@ Designed around modern editorial design, the **Swiss International Typographic S
 
 ---
 
+- **Live**: [Live Link](https://pinak-portfolio.onrender.com)
+
+---
+
 ## 🏛️ Personal Brand & Positioning
 
 - **Name**: Pinak Chauhan
